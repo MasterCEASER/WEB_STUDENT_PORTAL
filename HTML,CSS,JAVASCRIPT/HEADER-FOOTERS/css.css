@@ -1,0 +1,189 @@
+#header{
+    
+    background-color: burlywood;
+    border:5px solid brown;
+    border-radius:10px;
+    
+    border-bottom:15px solid brown; 
+    font-family: sans-serif;
+    margin-top:15px;
+    height:20%;
+    width:100%;   
+}
+
+#header .left{
+    
+    height:100%; 
+    width:50%;
+    float:left;    
+}
+
+.left .pic{
+    
+    height:100%;
+    width:75%;
+    margin-left:20px; 
+    background-image: url(PUCIT.png);
+    background-repeat: no-repeat;
+    float:left;
+}
+.pic .name{
+    margin-top:5%; 
+    width:65%;
+    height:50%;
+    
+    float:right;
+}
+
+.name .desc{
+    
+    margin-top:0px; 
+    width:100%;
+    height:25%;
+    
+}
+
+#header .right{
+    
+    height:100%;
+    width:50%;
+    float:right;    
+}
+
+.right .bar{
+   
+    margin-top:10px; 
+    width:80%;
+    height:30%;
+    margin-left:40px; 
+
+}
+.bar a{
+    
+    padding:10px; 
+    font-size:24px;
+    text-decoration:none;
+    font-family: sans-serif;
+    color: black;
+    
+
+
+}
+.bar a:hover {
+    font-size:30px;
+    color: brown;
+    text-decoration: underline;
+}
+
+
+.right .contact{
+   
+   
+    margin-top:73px; 
+    width:80%;
+    height:15%;
+    margin-left:280px;
+
+
+}
+.right .pic {
+    
+   
+    margin-top:10px; 
+    height:59%;
+    width:15%;
+    float: right;
+    background-image: url(PUCIT1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	
+}
+
+
+
+#footer{
+
+    
+    margin-top:20px; 
+    width: 100%;
+    height:14%;
+    border: 5px solid brown;
+    border-radius:10px; 
+     border-style:double;
+    font-size:14px;
+    font-family: sans-serif;
+
+}
+
+#footer a{
+
+    padding:10px; 
+    font-size:24px;
+    text-decoration:none;
+    font-family: sans-serif;
+    color: black;
+}
+
+#footer a:hover {
+    font-size:30px;
+    color: brown;
+    text-decoration: underline;
+}
+
+#footer .txt{
+    
+    margin-left:20px; 
+    
+    float: left;
+    font-size:16px;
+    color: crimson;
+    width:20%;
+    height:25%; 
+    
+}
+
+
+#footer .rights{
+    
+    margin-top:33px; 
+    width:20%;
+    clear: both;
+    float: left;
+    height:25%; 
+    margin-left: 20px;
+    
+}
+
+
+#footer .search{
+    
+    float:left ;
+    margin-left:15%; 
+    width:20%;
+    height:25%; 
+    
+}
+
+
+#footer .terms{
+    
+    margin-top:0px;
+    float right;
+    margin-left:75%; 
+    width:20%;
+    height:45%; 
+}
+#footer .pic{
+    
+
+    
+    margin-top:0px;
+    float right;
+    margin-left:105%; 
+    width:20%;
+    height:60%; 
+    
+    background-image: url(Question_mark.png);
+    background-repeat: no-repeat;
+    
+}
