@@ -1,0 +1,203 @@
+.hide > *{
+    display: none;
+}
+#class-announcements-sidebar{
+    width: 30%;
+    display: inline-block;
+    position: absolute;
+    left: 70%;
+    
+    
+}
+#class-announcements-content{
+    width: 69%;
+    display: inline-block;
+    position: absolute;
+    right: 30%;
+    
+}
+#class-announcements-page{
+    width: 100%;
+}
+#class-info-announcements-content #description{
+    margin-top: -18px;
+    margin-left: 30px;
+    color: burlywood
+}
+#class-info-announcements-content h3{
+    margin-top: -1px;
+    margin-left: 5px;
+    color: chocolate;
+}
+#class-info-announcements-content{
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 220px;
+    display: inline-block;
+}
+#class-logo-announcements-content{
+    margin: auto;
+    width: 220px;
+    height: 180px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+#class-announcements-content h2{
+    padding-left: 40px;
+}
+#class-logo-announcements-content img{
+    width: 100%;
+    height: 100%;
+}
+div{
+    padding: 0px;
+    border: 0px solid black;
+}
+#sub-content #sub-nav{
+    margin-top: 30px;
+    width: 18%;
+    right: 82%;
+    display: inline-block;
+    position: absolute;
+}
+#sub-content #Announcements .subject h4{
+    display: inline;
+}
+#sub-content #Announcements h3{
+    font-size: 23px;
+    text-decoration: underline;
+    margin-left: 30px;
+}
+#sub-content #Announcements .date-time #edit_button{
+    font-size: 16px;
+}
+#sub-content #Announcements .date-time {
+    font-size: 12px;
+    position: relative;
+    left:70%;
+    width: 28%;
+    margin-bottom: -2%;
+    color: darkblue;
+    font-style: italic;
+}
+#sub-content #Announcements #new_sub{
+    font-size: 16px;
+    margin-left: 20px;
+}
+#sub-content #Announcements #new_text{
+    width: 100%;
+    margin-top: 1%;
+    margin-left: -12%;
+}
+#sub-content #Announcements .subject {
+    display: inline;
+    font-size: 16px;
+    position: relative;
+    left: 5%;
+    background-color: white;
+}
+#sub-content #Announcements .announce_new {
+    font-size: 20px;
+    text-decoration: underline;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+#sub-content #Announcements .detail{
+    margin-left: 15%;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 1%
+}
+#sub-content #Announcements .announce{
+    border: 2px solid black;
+    margin-right: 50px;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-bottom-style: dashed;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
+
+#sub-content #Announcements{
+    width: 80%;
+    min-height: 300px;
+    background-color: lightgray;
+    border: 1px black solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    left: 17%;
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+#sub-content #Files #add_new_file{
+    position: absolute;
+    top: 14%;
+    left: 70%;
+}
+#sub-content #Posts #new_post{
+    background-color: white;
+    width: 80%;
+}
+
+#sub-content #new_post_text{
+    width: 80%;
+    height: 50px;
+    margin-top: -3%;
+    margin-left: 3%;
+    margin-bottom: 2%;
+    border: 0;
+    resize: none;
+}
+
+#sub-content #Posts #new_post h4{
+    margin-left: 3%;
+}
+#sub-content #Posts #new_post #btn_div{
+    align-content: center;
+}
+#sub-content .sub_main_content{
+    width: 80%;
+    min-height: 300px;
+    background-color: lightgray;
+    border: 1px black solid;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    left: 17%;
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+#sub-content #sub-nav > *{
+    padding: 3%;
+    margin-left: 15%;
+    margin-top: 1%;
+    width: 73.5%;
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom: 1px black solid;
+    border-left: 1px black solid;
+    border-top: 1px black solid;
+    position: relative;
+    background-color: darkgray;
+}
+#sub-content #sub-nav :nth-child(1){
+    z-index: 1;
+    background-color: lightgrey;
+}
+#sub-content #sub-nav :nth-child(2){
+    z-index: -2;
+}
+#sub-content #sub-nav :nth-child(3){
+    z-index: -3;
+}
