@@ -1,0 +1,54 @@
+#classroomS-main{
+ width:70%;
+ position: relative;
+ top:20%;
+ margin-left: 50%;
+ bottom: 10%;
+ margin-right: 20%;
+ margin: auto ;
+ padding: 0;
+ background-color: darkgrey;
+}
+#classroomT-mainContent{
+   height: 15px ;
+}
+
+#classroomS-mainContent{
+ height: 15px ;
+}
+body{
+ background-image: url(background6.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ height: 100%
+}
+#classroomS-Content #classroomS-Content2 {
+  position: relative;
+  left:50%;
+ margin-left: 50px;
+}
+#classroomS-Content{
+ width: 100%;
+ margin: 0;
+ padding: 0 ;
+}
+#classroomS-Content1{
+ width: 100%;
+}
+#classroomS-Content1-a{
+ width: 50%;
+}
+#classroomS-Content1-b{
+ text-align: right;
+ float:right ;
+ width: 50%;
+}
+#classroomS-Content2{
+ text-align: center;
+}
+#classroomS-Content #classroomS-Content2 table td, .one {
+ border-style:solid;
+ border-width: medium;
+ border-color: black;
+}
