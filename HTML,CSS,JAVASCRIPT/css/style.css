@@ -1,6 +1,20 @@
 .hide > *{
     display: none;
 }
+
+#class-announcements-page{
+    position: relative;
+}
+
+#header{
+    position: relative;
+    height: 20%;
+}
+#footer{
+    position: relative;
+    height: 20%;
+}
+
 #class-announcements-sidebar{
     width: 30%;
     display: inline-block;
@@ -144,6 +158,24 @@ div{
 #sub-content #Posts #new_post{
     background-color: white;
     width: 80%;
+}
+
+#sub-content #Posts #old_posts .post img{
+    width:60%;
+    display: inline-block;   
+    position: absolute;
+}
+
+#sub-content #Posts #old_posts .post_data{
+    width:60%;
+    display: inline-block;
+    position: relative;
+    left: 12%;
+}
+#sub-content #Posts #old_posts > *{
+    margin-top: 3%;
+    
+    
 }
 
 #sub-content #new_post_text{

@@ -2,39 +2,42 @@
     <head>        
         <link href="../css/style.css" type="text/css" rel="stylesheet">
         <link href="../css/css.css" rel="stylesheet" type="text/css" />
+        <link href="../css/header.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div id = "header">
-            <div class = "left">                
-                <div class="pic">
-                    <div class="name">                        
-                        <span style="display:inline;color:brown; font-size:45px; "> PUCIT PORTAl </span>                        
-                       <div class="desc">                           
-                           <span style="font-size:14px;margin-left:55px;color:black"> WE MAKES IT EASIER FOR YOU </span>                          
-                        </div>                        
-                    </div>                
-                </div>                
-                <div class="name"></div>
+        <div id="header">
+            <div class="logo">
+                <img src="../Images/PUCIT.png"> </img>
             </div>
-            <div class = "right">
-                <div class="pic"></div>
-                <div class="bar">
-                    <a href = "#"> Home</a>
-                    <span> | </span>
-                    <a href = "#"> Classrooms</a>
-                    <span> | </span>
-                    <a href = "#"> Teachers</a>
-                    <span> | </span>
-                    <a href = "#"> Posts</a>
-                    <span> | </span>
-                    <a href = "#"> Contact</a>
-                </div>                
-                <div class="contact">
-                    <span style="font-size:26px;margin-right:12px;padding:2px;font-family:sans-serif;"> Join us on </span>
-                    <img src = "../Images/file1.png"  ></img>
-                    <img src = "../Images/wtsapp1.png" ></img>
-                </div>
+            <div class="headin">
+                <table> 
+                    <tr> 
+                        <td> <span> PUCIT PORTAL </span> </td>
+                    </tr> 
+                    <tr> 
+                        <td style="padding-left:25px;font-size:14px"> its a easy way to go </td>
+                    </tr>
+                </table>
             </div>
+            <div class = "bar">
+                <table>
+                    <tr>
+                        <td> Home </td>
+                        <td> ClassRooms </td>
+                        <td> Teachers </td>
+                        <td> Posts </td>
+                        <td> Contact </td>
+                    </tr>    
+                </table>    
+            </div>
+            <div class="user">
+                <img src="../Images/PUCIT.png"> </img>
+            </div>
+            <div class ="TT">
+               <span> Contact Us</span>
+                <img src="HEADER-FOOTERS/wtsapp1.png"> </img>
+                <img src="HEADER-FOOTERS/file1.png"> </img>
+            </div>    
         </div>   
         <div id="class-announcements-page">
             <div id="class-announcements-content">
@@ -60,7 +63,20 @@
                                 <span>
                                     <img src="../Images/PUCIT.png" style="width:60px;height:60px;">
                                 </span>
-                                <div id="post_data">
+                                <div class="post_data">
+                                    <span> Date-Time </span>
+                                    <p class="post_data_content"> 
+                                        <b>Posts: </b> dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+                                    </p>
+                                    <div id="post_comments">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <span>
+                                    <img src="../Images/PUCIT.png" style="width:60px;height:60px;">
+                                </span>
+                                <div class="post_data">
                                     <span> Date-Time </span>
                                     <p id="post_data_content"> 
                                         <b>Posts: </b> dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
@@ -73,22 +89,9 @@
                                 <span>
                                     <img src="../Images/PUCIT.png" style="width:60px;height:60px;">
                                 </span>
-                                <div id="post_data">
+                                <div class="post_data">
                                     <span> Date-Time </span>
-                                    <p id="post_data_content"> 
-                                        <b>Posts: </b> dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
-                                    </p>
-                                    <div id="post_comments">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <span>
-                                    <img src="../Images/PUCIT.png" style="width:60px;height:60px;">
-                                </span>
-                                <div id="post_data">
-                                    <span> Date-Time </span>
-                                    <p id="post_data_content"> 
+                                    <p class="post_data_content"> 
                                         <b>Posts: </b> dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
                                     </p>
                                     <div id="post_comments">
@@ -110,38 +113,36 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id = "footer">            
-            <div class = "txt">
-                <p>This Website is only for the PUCIT users</p>    
-            </div>            
-            <div class = "search">                
+        </div><!--
+        <div id ="footer">
+            <div class ="rights">
+                ALL RIGHTS ARE RESERVED
+            </div>
+            <div class ="txt">
+                This is only for PUCIT USERS
+            </div>
+            <div class ="search">
                 <form > 
                     <table cellpadding="0px" cellspacing="0px"> 
-                        <tr>
+                        <tr> 
                             <td style="border-style:solid none solid solid;border-color:#4B7B9F;border-width:1px;">
-                                <input type="text" placeholder="Search here" style="width:300px; border:0px solid; height:17px;padding:0px 3px; position:relative;"> 
-                            </td>
-                            <td style="border-style:solid;border-color:#4B7B9F;border-width:1px;">
-                                <input type="submit" value="" style="border-style: none; background:url('../Images/searchbutton3.gif') no-repeat; width: 25px;height: 20px;">
+                            <input type="text" placeholder="Search here" style="width:300px; border:0px solid; height:17px;padding:0px 3px;position:relative;"> 
+                                </td>
+                            <td style="border-style:solid;border-color:#4B7B9F;border-width:1px;"> 
+                                        <input type="submit" value="" style="border-style: none; background:url('searchbutton3.gif') no-repeat; width: 25px;height: 20px;">
                             </td>
                         </tr>
                     </table>
-                </form>                
-            </div>            
-            <div class="terms">   
-                <a href="#" style=" margin-bottom:5px; font-size:14px;"> Contact </a><br>
-                <a href="#" style=" margin-bottom:5px; font-size:14px;"> Find us </a><br>                
-                <a href="#" style=" margin-bottom:5px; font-size:12px;"> See Terms and Conditions</a><br>
-                <a href= "#">
-                    <div class = "pic"></div>
-                </a>
+                </form>
             </div>
-            <div class = "rights">
-                <span style="margin-left:5px;font-size:12px">
-                    All Rights are Reserved
-                </span>
-            </div>
+          <div class ="contents">
+              <a href="#" > Contact </a> <br >
+              <a href="#" > Find us </a> <br>
+              <a href="#" > See Terms and Conditions </a> <br>
+              <a href= "#"> 
+                  <div class = "pic"></div>
+              </a>    
+          </div>
         </div>
-    </body>
+    --></body>
 </html>
