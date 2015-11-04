@@ -1,5 +1,4 @@
-#classroomS-main{
-<<<<<<< HEAD
+#classroomS-main{\
  width:70%;
  position: relative;
  top:20%;
@@ -18,12 +17,12 @@
  height: 15px ;
 }
 body{
- background-image: url(background6.jpg);
+/* background-image: url(background6.jpg);
  background-repeat: no-repeat;
  background-size: cover;
  background-attachment: fixed;
  height: 100%
-}
+*/}
 #classroomS-Content #classroomS-Content2 {
   position: relative;
   left:50%;
@@ -77,14 +76,14 @@ body{
         #classroomS-mainContent{
             height: 15px ;
         
-       }
+       }/*
        body{
         background-image: url(background6.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         height: 100%
       
-       }
+       }*/
        #classroomS-Content{
             width: 100%;
             margin: 0;
@@ -123,4 +122,3 @@ body{
         border-width: medium;
         border-color: black;
        }
->>>>>>> 012d64d2888378091aa8c5e080f22c984eb94d43

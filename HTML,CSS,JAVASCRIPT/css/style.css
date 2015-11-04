@@ -1,13 +1,12 @@
 
-.hide > *{
+.hide{
     display: none;
 }
 body{
-    margin:0;
 }
+
 div,p{
     padding: 0px;
-    box-sizing: border-box;
     border: 0px solid black;
 }
 
@@ -24,32 +23,28 @@ div,p{
 .img-circle {
   border-radius: 50%;
 }
-#class-announcements-page{
-    position: relative;
+#class--announcements-page{
+    background-color: lightgray;
 }
-
-#header{
-    position: relative;
-    height: 20%;
-}
-#footer{
-    position: relative;
-    height: 20%;
-}
-
 #class-announcements-sidebar{
-    width: 30%;
+    /*width: 30%;
     display: inline-block;
     position: absolute;
-    left: 70%;
-    
+    left: 70%;*/
+    margin-left:50px;
+    margin-right:20px;
     
 }
-#class-announcements-content{
+body{
+}
+
+#class-announcements-content{/*
     width: 69%;
     display: inline-block;
     position: absolute;
-    right: 30%;
+    right: 30%;*/
+    margin-left:10px;
+    margin-right:10px;
     
 }
 #class-announcements-page{
@@ -65,21 +60,21 @@ div,p{
     margin-left: 5px;
     color: chocolate;
 }
-#class-info-announcements-content{
+#class-info-announcements-content{/*
     margin-top: 40px;
     margin-left: 50px;
     margin-right: 10px;
     margin-bottom: 20px;
+    display: inline-block;*/
     width: 220px;
-    display: inline-block;
 }
 #class-logo-announcements-content{
     margin: auto;
     width: 220px;
-    height: 180px;
+    height: 180px;/*
     display: inline-block;
     margin-top: 30px;
-    margin-left: 50px;
+    margin-left: 50px;*/
 }
 #class-announcements-content h2{
     padding-left: 40px;
@@ -87,13 +82,6 @@ div,p{
 #class-logo-announcements-content img{
     width: 100%;
     height: 100%;
-}
-#sub-content #sub-nav{
-    margin-top: 30px;
-    width: 18%;
-    right: 82%;
-    display: inline-block;
-    position: absolute;
 }
 #sub-content #Announcements .subject h4{
     display: inline;
@@ -175,48 +163,55 @@ div,p{
 }
 #sub-content #Posts #new_post{
     background-color: white;
+    box-shadow: 10px 10px 35px 3px grey;
     width: 80%;
+    display: inline-block;
 }
 
 #sub-content #Posts #old_posts .post img{
+/*
     position: absolute;
+*/
     width:40px;
     height:40px;
 }
 
+#old_posts .post #post_header{
+    display: table;
+    width: 100%;
+    margin-bottom: -10;
+}
+#old_posts .post #post_header > *{
+    display: table-cell;
+    border: 0px solid black;
+}
+#old_posts .post #post_header .post_img_div{
+    width:50px;
+}
 #sub-content #Posts #old_posts .post_data{
-    width:100%;
+    width:90%;
     padding-left: 50px;
-    display: inline-block;
-    position: relative;
 }
 #sub-content #Posts #old_posts .post_data .post_data_content{
     padding-right: 8%;
 }
-#sub-content #Posts #old_posts .post_data .time{
-    width:100%;
-    color: red;
-    text-align: justify;
-    display: inline;
-    position: relative;
-    left: 90%;
-}
-#sub-content #Posts #old_posts .post_data .date{
-    width:100%;
-    color: red;
-    text-align: justify;
-    display: inline;
-    position: relative;
-    left: 87%;
-}
-#sub-content #Posts #old_posts .post_data .posted_by{
-    width:100%;
-    display: inline;
-    position: relative;
-    right: 10%;
+#sub-content #Posts #old_posts .post #post_header .posted_by{
     font-weight: bold;
     font-family: Verdana, Geneva, Times;
-    text-overflow: ellipsis;
+    vertical-align: middle;    
+}
+#sub-content #Posts #old_posts .post #post_header #date-time{
+    vertical-align: middle;
+    text-align: end;
+    padding-right: 2%;
+    color: red;
+    text-shadow: 2px 2px 1px blanchedalmond;
+}
+#sub-content #Posts #old_posts .post #post_header #date-time > *{
+    background-color: lightgray;
+    display: inline-block;
+    box-shadow: .2px .2px 4px 1px white;
+    margin-top: 1;
 }
 #sub-content #Posts #old_posts > *{
     margin-top: 3%;
@@ -230,53 +225,75 @@ div,p{
 }
 #sub-content #new_post_text{
     width: 80%;
-    height: 50px;
-    margin-top: -3%;
     margin-left: 3%;
-    margin-bottom: 2%;
+    padding: 0;
+    height: 50px;/*
+    margin-top: -3%;
+    margin-bottom: 2%;*/
     border: 0;
     resize: none;
 }
 #sub-content #Posts #new_post h4{
     margin-left: 3%;
     margin-bottom: 3%;
-    position: relative;
+    display: inline;/*
+    position: relative;*/
 }
 #sub-content #Posts #new_post #btn_div{
+/*
     position: relative;
     display: inline-block;
     left:0%;
+*/
+}
+#sub-content .sub_child_content{
+    display: table-cell;
+    clear: both;
+}
+#sub-content {
+    display: table;
+    -webkit-column-span: all;
+    -webkit-column-count: 5;
+-webkit-column-rule: 2px dotted
 }
 #sub-content .sub_main_content{
-    width: 80%;
     min-height: 300px;
-    background-color: lightgray;
-    border: 1px black solid;
+    background-color: whitesmoke;
+    border: 1px solid #ddd;
     border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    left: 17%;
-    display: inline-block;
-    position: absolute;
+    border-bottom-right-radius: 20px;/*
+    display: inline-block;*/
     z-index: 0;
     padding-top: 50px;
     padding-left: 50px;
     padding-bottom: 50px;
     box-shadow: 8px 8px 15px 2px #aaa;
+    margin-left: 3%;
+    vertical-align: middle;
+    -webkit-column-fill: 60%;
+    
 }
 #sub-content #sub-nav > *{
-    padding: 3%;
-    margin-left: 15%;
-    margin-top: 1%;
-    width: 80%;
+    padding: 3;
     font-size: 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 10px;
-    border-bottom: 1px black solid;
-    border-left: 1px black solid;
-    border-top: 1px black solid;
-    position: relative;
-    background-color: darkgray;
+    border-bottom: 1px #ddd solid;
+    border-left: 1px #ddd solid;
+    border-top: 1px #ddd solid;
+    background-color: grey;
+    z-index: 13;   
 }
+
+#sub-content #sub-nav{
+    margin-top: 30px;/*
+    display: inline-block;*/
+    padding: 0;
+    list-style: none;/*
+    background-color: red;*/
+    
+}
+/*
 #sub-content #sub-nav :nth-child(1){
     z-index: 1;
     background-color: lightgrey;
@@ -286,4 +303,4 @@ div,p{
 }
 #sub-content #sub-nav :nth-child(3){
     z-index: -3;
-}
+}*/

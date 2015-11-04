@@ -35,6 +35,10 @@
     float:right;
 }
 
+nav#menu{
+    margin-right: 20px;
+}
+
 .name .desc{
     
     margin-top:0px; 
