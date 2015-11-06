@@ -1,18 +1,10 @@
 #classroomT-main{
-    width:70%;
-    background-color: darkgray ;
+    width:100%;
+    background-color: lightgrey;
     height: 100%;
     margin: auto ;
     padding: 0;
-    position: absolute
-    top:20%;
-    margin-left: 14%;
-    bottom: 10%;
-    margin-right: 30%;/*
-    background-image: url(contentb1jpg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;*/
-
+   
 }
 #classroomT-mainContent{
     height: 15px ;
