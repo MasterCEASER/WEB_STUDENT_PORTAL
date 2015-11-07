@@ -1,13 +1,23 @@
-<html>
-<head>
-<style>
+ <html>
+    <head>        
+        <link href="../css/style.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="headr.css">
+        <link rel="stylesheet" type="text/css" href="footer.css">
+        
+        
+      <style>
+  button{height:50px; width:200px; border-radius: 15px; box-shadow: 4px 3px;font-style: oblique;color: blue}       
 a:link {color:blue;}    
-a:visited {color:blue;} 
-a:hover {color:lightgray;} 
-div.div1{border:2px ;padding:10px 40px;background:lightgray ;width:auto;border-radius:25px;}
+a:visited {color:lightgray;} 
+a:hover {color:red;} 
+div.div1{border:2px ;padding:10px 40px;background:lightgray ; display:none;width:auto;border-radius:25px;}
+          
     ul.img-list {
+        border:2px solid grey; 
+        background-color: lightgray;
+         box-shadow: 0px 12px 30px -8px dimgrey;
   list-style-type: none;
-  margin: 0;
+  margin-top: 5%;
   padding: 0;
   text-align: center;
 }
@@ -74,6 +84,7 @@ span.text-content {
 $(document).ready(function() {
     
     $("#a").click(function() {
+        $(".div1").show();
         var newImg = '<img src='+ $(this).attr("src") + '></img>';
                  $('#ladiv')
                     .html($(newImg)
@@ -83,6 +94,7 @@ $(document).ready(function() {
 
        });
     $("#b").click(function() {
+        $(".div1").show();
         var newImg = '<img src='+ $(this).attr("src") + '></img>';
                  $('#ladiv')
                     .html($(newImg)
@@ -91,6 +103,7 @@ $(document).ready(function() {
 
        });
     $("#c").click(function() {
+        $(".div1").show();
         var newImg = '<img src='+ $(this).attr("src") + '></img>';
                   $('#ladiv')
                     .html($(newImg)
@@ -99,6 +112,7 @@ $(document).ready(function() {
 
        });
     $("#d").click(function() {
+        $(".div1").show();
             var newImg = '<img src='+ $(this).attr("src") + '></img>';
                   $('#ladiv')
                     .html($(newImg)
@@ -107,6 +121,7 @@ $(document).ready(function() {
 
        });
     $("#e").click(function() {
+        $(".div1").show();
             var newImg = '<img src='+ $(this).attr("src") + '></img>';
                       $('#ladiv')
                     .html($(newImg)
@@ -115,7 +130,7 @@ $(document).ready(function() {
 
                });
     $("#f").click(function() {
-        
+        $(".div1").show();
             var newImg = '<img src='+ $(this).attr("src") + '></img>';
                  $('#ladiv')
                     .html($(newImg)
@@ -126,11 +141,35 @@ $(document).ready(function() {
 });
 </script>
 
-</head>
-
-<body>
+    </head>
+    <body>
+        <div id="Header">
+            <div class="wrapper">
+                <div id="container">
+                    <div class="main_menu inline">
+                        <div class="nav-bar inline">
+                            <div class="container inline">
+                                <div><img class="img-thumbnail img-circle web_logo_img logo" src="PUCIT1.png"></div>
+                                <a id="logo" href="index.html">PUCIT Portal</a>
+                                <ul class="inline">
+                                    <li><input type="email" placeholder="Enter your Email" autofocus required></li>
+                                    <li><input type="password" placeholder="Enter your Password" autofocus required></li>
+                                    <li><input type="Button" value = "Log IN"></li>
+                                    
+                                </ul>
+                                <div id="usr_img"><img class="user_logo_img" src="shuja.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
     
-    <ul class="img-list">
+
+    <br><br><center><button><b>SIGN UP</b></button></center>
+        
+<ul class="img-list">
   <li>
     <a href="#">
       <img src="a.jpg" id="a" border=4px width="200" height="100" />
@@ -171,7 +210,51 @@ $(document).ready(function() {
    
     <center><div id="ladiv"></div>
         <div class="div1" id="my-div"></div></center>
-    
-    </body>
-
-</html>
+         <div id ="footer">
+            <div class ="rights">
+                ALL RIGHTS ARE RESERVED
+            </div>
+          
+            <div class ="txt">
+                This is only for PUCIT USERS
+            </div>
+          
+            <div class ="search">
+                
+                <form > 
+                    <table cellpadding="0px" cellspacing="0px"> 
+                        <tr> 
+                            <td style="border-style:solid none solid solid;border-                                  color:#4B7B9F;border-width:1px;">
+                            <input type="text" placeholder="Search here"                                         style="width:300px; border:0px solid; height:17px;                                      padding:0px 3px; position:relative;"> 
+                                </td>
+                            <td style="border-style:solid;border-                                                       color:#4B7B9F;border-width:1px;"> 
+                                        <input type="submit" value="" style="border-                                            style: none; background:                                                    url('searchbutton3.gif') no-repeat; width: 25px;                                    height: 20px;">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+          
+            <div class ="contents">
+                
+                <a href="#" > Contact
+                </a>
+                <br >
+                
+                <a href="#" > Find us
+                </a>
+                <br>
+                
+                <a href="#" > See Terms and Conditions
+                </a>
+                <br>
+                            <a href= "#"> 
+                                <div class = "pic">
+                                    
+                                </div>
+                            </a>    
+                
+            </div>
+        </div>
+     </body>
+</html> 
