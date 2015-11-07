@@ -1,0 +1,112 @@
+.tinfomain {
+    
+    position: relative;
+    width:99%;
+    height:25%;
+    top:5%;
+    left:0%;
+    right:0%;
+    z-index:1;
+    background-color:darkgrey;
+    border:8px solid grey;
+    border-radius:2px; 
+    box-shadow: 0px 18px 30px -8px purple;
+    
+}
+
+.tinfomain2 {
+    
+    position:relative;
+    width:99%;
+    height:25%;
+    top:15%;
+    left:0%;
+    right:0%;
+    z-index:1;
+    background-color:darkgrey;
+    border:8px solid grey;
+    border-radius:5px; 
+    box-shadow: 0px 18px 30px -8px purple;
+}
+.tinfomain .tinfo,.tinfomain2 .tinfo{
+    
+    position:absolute;
+    width:50%;
+    height:80%;
+    top:5%;
+    left:0%;
+    right:0%;
+   
+}
+
+
+.tinfomain .tinfo .tpic,.tinfomain2 .tinfo .tpic{
+    
+    position:absolute;
+    width:25%;
+    height:100%;
+    top:0%;
+    left:3%;
+    right:0%;
+    
+}
+
+
+.tinfomain .tinfo .tdata,.tinfomain2 .tinfo .tdata{
+    
+    border:8px solid grey;
+    border-radius:2px; 
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-radius:10px; 
+    position:absolute;
+    box-shadow: 0px 12px 30px -8px black;
+    width:80%;
+    height:100%;
+    top:20 %;
+    left:25%;
+    right:0%;
+   
+}
+.tinfomain .tfiles, .tinfomain2 .tfiles {
+	position: absolute;
+    
+    top:5%;
+    width:40%;
+    height:80%;
+    border:8px solid grey;
+    border-radius:2px; 
+    box-shadow: 0px 12px 30px -8px purple;
+    
+    border-radius:10px; 
+    left :55%;
+     
+}
+.tinfomain .tfiles .file, .tinfomain2 .tfiles .file {
+    
+    position:absolute;
+    
+    top:2%;
+    width:90%;
+    height:15%;
+    left:4%; 
+	
+}
+.tinfomain .tpic img,.tinfomain2 .tpic img{
+    
+    
+    position: absolute;
+    width:auto;
+    height:auto;
+    top:10%;
+    left:5%;
+    border-radius:30%; 
+	
+} 
+
+span{
+ font-size:20px;
+color:darkred;
+font-weight: bold;    
+    
+}
+

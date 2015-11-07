@@ -91,10 +91,10 @@ border-color: black;
             bottom: 0;
             top: 0;
             z-index: 101;
-            background-color: #000000;
+            background-color: whitesmoke;
             opacity: .15;
-            filter: alpha(opacity=20);
-            -moz-opacity: .2;
+            filter: alpha(opacity=50);
+            opacity: .9;
         }
         .web_dialog
         {

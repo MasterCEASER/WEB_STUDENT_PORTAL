@@ -1,0 +1,230 @@
+
+.relative{
+   
+    width:100%;
+    height:60%;
+    position: relative;
+    top: 0%;
+    z-index: -1;
+}
+
+ 
+.efeed{
+           
+    
+    position: absolute;
+    top: 10%;
+    left:66%; 
+    right: 20%;
+    width:30%;    
+    height:85%;
+    
+   	
+}
+
+.efeed .efirstfeed{
+ order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+  position: absolute;
+ top:0%;
+ width:100%;
+ height:30%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .efirstfeed .imgg{
+  
+ position: absolute;
+  top:0%;
+ width:35%;
+ height:100%;
+ 
+ left:0%; 
+	
+}
+.efeed .esecondfeed{
+ order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+     
+  position: absolute;
+ 
+ top:35%;
+ width:100%;
+ height:30%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .efirstfeed .descr{
+  
+ position: absolute;
+  top:0%;
+ width:65%;
+ height:100%;
+ background-color:lightgrey;
+ left:35%; 
+	
+}
+
+.efeed .esecondfeed .imgg{
+  
+ position: absolute;
+  top:0%;
+ width:35%;
+ height:100%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .esecondfeed .descr{
+  
+ position: absolute;
+ top:0%;
+ width:65%;
+ height:100%;
+  background-color:lightgrey;
+ left:35%; 
+	
+}
+
+.efeed .ethirdfeed{
+ order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+ 
+  
+ position: absolute;
+ top:71%;
+ width:100%;
+ height:30%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .ethirdfeed .imgg{
+  
+ position: absolute;
+  top:0%;
+ width:35%;
+ height:100%;
+ 
+	
+}
+
+.efeed .ethirdfeed .descr{
+  
+ position: absolute;
+  top:0%;
+ width:65%;
+ height:100%;
+  background-color:lightgrey;
+ left:35%; 
+	
+}
+.unifeed{
+           
+    order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+    position: absolute;
+    top: 10%;
+    left:10%; 
+    right: 20%;
+    width:50%;    
+    height: 25%;
+   
+    border:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+    
+ 
+   	
+}
+
+
+.cfeed{
+           
+    order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+    position: absolute;
+    top: 40%;
+    left:10%; 
+    right: 20%;
+    width:50%;    
+    height: 25%;
+    
+   	
+}
+
+.pfeed{
+           
+    order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+    position: absolute;
+    top: 70%;
+    left:10%; 
+    right: 20%;
+    width:50%;    
+    height: 25%;
+    
+   	
+}
+
+
+
+
+.cfeed .firstimg,.unifeed .firstimg,.pfeed .firstimg{
+  position:absolute;
+  top:0%;
+  right:5%;
+  background-color:black;
+ width:25%;
+ height:100%;
+
+
+}
+
+.cfeed .secondimg, .pfeed .secondimg,.unifeed .secondimg{
+  position:absolute;
+  top:0%;
+  right:35%;
+  background-color:black;
+ width:30%;
+ height:100%;
+
+
+}
+
+.cfeed .thirdimg, .unifeed .thirdimg,.pfeed .thirdimg{
+  position:absolute;
+  top:0%;
+  right:70%;
+  background-color:black;
+ width:25%;
+ height:100%;
+
+
+}
+
