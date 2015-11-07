@@ -1,0 +1,175 @@
+
+.relative{
+   
+    width:100%;
+    height:60%;
+    position: relative;
+    top: 0%;
+    z-index: 1;
+}
+
+ 
+.efeed{
+           
+    
+    position: absolute;
+    top: 10%;
+    left:66%; 
+    right: 20%;
+    width:30%;    
+    height:85%;
+    
+   	
+}
+
+.efeed .efirstfeed{
+ order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+  position: absolute;
+ top:0%;
+ width:100%;
+ height:30%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .efirstfeed .imgg{
+  
+ position: absolute;
+  top:0%;
+ width:35%;
+ height:100%;
+ 
+ left:0%; 
+	
+}
+.efeed .esecondfeed{
+ order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+     
+  position: absolute;
+ 
+ top:35%;
+ width:100%;
+ height:30%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .efirstfeed .descr{
+  
+ position: absolute;
+  top:0%;
+ width:65%;
+ height:100%;
+ background-color:lightgrey;
+ left:35%; 
+	
+}
+
+.efeed .esecondfeed .imgg{
+  
+ position: absolute;
+  top:0%;
+ width:35%;
+ height:100%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .esecondfeed .descr{
+  
+ position: absolute;
+ top:0%;
+ width:65%;
+ height:100%;
+  background-color:lightgrey;
+ left:35%; 
+	
+}
+
+.efeed .ethirdfeed{
+ order:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+ 
+  
+ position: absolute;
+ top:71%;
+ width:100%;
+ height:30%;
+ 
+ left:0%; 
+	
+}
+
+.efeed .ethirdfeed .imgg{
+  
+ position: absolute;
+  top:0%;
+ width:35%;
+ height:100%;
+ 
+	
+}
+
+.efeed .ethirdfeed .descr{
+  
+ position: absolute;
+  top:0%;
+ width:65%;
+ height:100%;
+  background-color:lightgrey;
+ left:35%; 
+	
+}
+.unifeed{
+           
+    border:2px solid grey;
+   
+    box-shadow: 0px 12px 30px -8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    background-color: lightgray;
+    position: absolute;
+    top: 10%;
+    left:10%; 
+    right: 20%;
+    width:50%;    
+    height: auto;
+   
+    border:2px solid grey;
+   
+    box-shadow: 10px 35px 30px 8px dimgrey;
+    border-top: 2px solid #c4c4c4;
+    
+    
+ 
+   	
+}
+
+.unifeed  a{
+ 
+ text-decoration: none;
+ color: darkviolet;
+ 
+	
+}
+
+
+.unifeed  a:hover{
+ 
+ text-decoration:underline;
+ color:forestgreen;
+ 
+	
+}
