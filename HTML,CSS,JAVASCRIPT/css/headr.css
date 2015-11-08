@@ -1,4 +1,5 @@
-
+div{
+}
 body{
     margin: 0;
 }
@@ -23,18 +24,24 @@ body{
     
 }*/
 #Header #container .main_menu .container ul{
-    text-align: right;
-    vertical-align: middle;
+    text-align: center;
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: -moz-baseline-middle;
+    vertical-align: -o-baseline-middle;
+
     padding-right: 2%;
     list-style: none;/*
     position: relative;
     bottom: 25px;*/
 }
-#Header #container .main_menu .container ul li{
-    display: inline;
-    padding-left: 1%;
+#Header #container .main_menu .container > ul li{
+    display: table-cell;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-left: 1px solid;
+    
 }
-#Header #container .main_menu .container ul li a{
+#Header #container .main_menu .container > ul li a{
     color: black;
     text-shadow: 2px 2px 3px grey;
 }
@@ -56,7 +63,9 @@ body{
     width: 60px;
 }
 #Header #container .main_menu .container div#usr_img{
-    vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: -moz-baseline-middle;
+    vertical-align: -o-baseline-middle;
     padding-right: 3%;
 }
 #Header #container .main_menu .container > *{
@@ -70,8 +79,9 @@ body{
     border: 0;
     outline: 0;
     font-size: 100%;
-    vertical-align: baseline;
-    background-color: transparent;
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: -moz-baseline-middle;
+    vertical-align: -o-baseline-middle;
     box-sizing: border-box;
     cursor: auto;
     font-style: normal;
@@ -99,9 +109,19 @@ body{
     height: 60px;
     width: 60px;
 }
+
+
+#Header #container .main_menu .container ul,
+#Header #container .main_menu .container #usr_img,
+#Header #container .main_menu .container > a{
+    padding-top: 20px;
+}
+
 #Header #container a#logo{
     
-    vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: -moz-baseline-middle;
+    vertical-align: -o-baseline-middle;
     padding-right: 25%;
     font-size: 24px;/*
     position: relative;
@@ -117,4 +137,46 @@ body{
     margin-top: 10px;
     height: 50px;
     
+}
+#user-profile{
+    position: relative;
+    top: 0;
+    right: 82;
+    margin-top: 10%;
+    text-align: left;/*
+    transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);*/
+}
+
+#user-profile > ul,
+#user-profile > ul > li{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+}
+#user-profile  ul li.clearfix{
+    display: list-item;
+    border-bottom: 1px solid gainsboro;
+    width: 110px;
+}
+#user-profile  ul li.clearfix > a{
+    all: default;
+    padding: 10px;
+    background: #3a3a3a;
+    color: #e4e4e4;
+    display: block;
+    border-bottom: 1px solid #4c4c4c;
+    font-size: 110%;
+}
+.open{
+    display: block  ;
+}
+.close{
+    display: none;`
 }
