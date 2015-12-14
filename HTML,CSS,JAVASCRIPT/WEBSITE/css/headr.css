@@ -36,14 +36,15 @@ body{
 }
 #Header #container .main_menu .container > ul li{
     display: table-cell;
-    padding-left: 2%;
-    padding-right: 2%;
     border-left: 1px solid;
+    padding-right: 4px;
+    padding-left: 4px;
     
 }
 #Header #container .main_menu .container > ul li a{
     color: black;
-    text-shadow: 2px 2px 3px grey;
+    text-shadow: 2px 2px 3px grey;/*
+    padding-right: 4px;*/
 }
 
 

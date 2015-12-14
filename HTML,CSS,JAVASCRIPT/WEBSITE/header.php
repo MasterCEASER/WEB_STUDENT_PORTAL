@@ -1,13 +1,4 @@
-    <html>
-    <head>        
-        <link href="../css/style.css" type="text/css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../css/headr.css">
-        <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
-        <script src="../js/jquery-2.1.4.min.js"></script>
-    </head>
-    <body>
-        
-        
+
         <div id="Header">
             <div class="wrapper">
                 <div id="container">
@@ -103,49 +94,3 @@
             </div>
         </div>
         
-        <hr style="margin-top:20px;">   
-        <div id="class-announcements-page">
-            <div id="class-announcements-content">
-                <h2>Class : <i>Web Engineering</i></h2>
-                <div id="sub-content">
-                    <div id="class-announcements-sidebar" class="sub_child_content" style="border: 0px solid black;">
-                        <div id="class-logo-announcements-content">
-                            <img class=""  src="../Images/class-logo.jpg" alt="Image Not Found...." >
-                        </div>
-                        <hr/>
-                    <ul id="sub-nav"  class="sub_child_content">
-                        <li><a href="ClassRooms_Info.html">Information </a></li>
-                        <li><a href="ClassRooms_Announcements.html">Announcements</a></li>
-                        <li><a href="ClassRooms_Files.html">Files</a></li>
-                        <li><a href="ClassRooms_Posts.html">Posts</a></li>
-                    </ul>
-                    </div>
-                    <div id="Announcements" class="sub_child_content sub_main_content" >
-                        <h3>Announcements</h3>
-                        <div class="post_wrapper">
-                            <?php
-                            include('connectPDO.php');
-                            
-                     echo        '<div class="post">
-                                <div class="post_header">
-                                    <div class="posted_by" style="text-shadow:2px 2px 1px white;">
-                                        &nbsp;&nbsp;&nbsp;
-                                        Subject: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <h6 style="display:inline;">Tommorrow Lecture</h6>
-                                    </div>
-                                    <div id="date-time">
-                                            <div class="time"> 02:05 </div> <br> 
-                                            <div class="date"> 01-11-15 </div>
-                                    </div>
-                                </div>
-                                <div class="detail">Tommorrow Lecture will be held in Roomm No. 13 at 3:00pm...</div>
-                            </div>';
-
-?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
