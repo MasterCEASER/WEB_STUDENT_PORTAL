@@ -1,0 +1,303 @@
+<html>
+    <head>
+        <link href ="../css/teacher-info_css/teachers-info.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="../css/headr.css">
+        <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        
+    </head>
+    
+    
+    <body>
+<!--
+        <div id="Header">
+            <div class="wrapper">
+                <div id="container">
+                    <div class="main_menu inline">
+                        <div class="nav-bar inline">
+                            <div class="container inline">
+                                <div><img class="img-thumbnail img-circle web_logo_img logo" src="../images/PUCIT1.png"></div>
+                                <a id="logo" href="../home/home.html">pucit portal</a>
+                                <ul class="inline">
+                                    <li><a href="../home/home.html" class="active">Home</a></li>
+                                    <li><a href="teacher-info.html" class="active">Teacher</a></li>
+                                    <li><a href="../Classrooms_HTML/classrommS/classroom_S.html" class="active">Class-Rooms</a></li>
+                                    <li><a href="../post_HTML/GLOBAL%20POST.html" class="active">Posts</a></li>
+                                    <li><a href="../Classrooms_HTML/contact/contactUs.html" class="active">Contact</a></li>
+                                </ul>
+                                <div id="usr_img"><img class="user_logo_img" src="../images/shuja.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  -->
+        
+        
+        <div id="Header">
+            <div class="wrapper">
+                <div id="container">
+                    <div class="main_menu ">
+                        <div class="nav-bar ">
+                            <div class="container ">
+                                <div><img class="img-thumbnail img-circle web_logo_img logo" alt="Image Ot.Found.." src="../images/PUCIT1.png"></div>
+                                <a id="logo" href="index.html">pucit portal</a>
+                                <ul>
+                                    <div style="display:table">
+                                        <li style="border-left:0px">
+                                            <a href="../home/home.html" class="active">
+                                                <i class="fa fa-home"></i>
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../teacher_HTML/teacher-info.html" >
+                                                <i class="fa fa-users"></i>
+                                                Teachers
+                                            </a>
+                                        </li>
+                                        <li style="display:table-cell;algin:right">
+                                            <a href="../Classrooms_HTML/classrommS/classroom_S.html" >
+                                                <i class="fa fa-linkedin-square"></i>
+                                                ClassRooms
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="GLOBAL%20POST.html" >
+                                                <i class="fa fa-envelope-o"></i>
+                                                Posts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../Classrooms_HTML/contact/contactUs.html" >
+                                                <i class="fa fa-phone"></i>
+                                                Contact
+                                            </a>
+                                        </li>
+                                    </div><!--
+                                    <li><a href="#" class="active">Teacher</a></li>
+                                    <li><a href="#" class="active">Class-Rooms</a></li>
+                                    <li><a href="#" class="active">Posts</a></li>
+                                    <li><a href="#" class="active">Contact</a></li>-->
+                                </ul>
+                                <div id="usr_img">
+                                    <img class="user_logo_img" id="user-profile-img" alt="Image NOt FOund ..." src="../images/shuja.png">
+                                    <div style="width:35px;">
+                                        <div class="layer close" id="user-profile" style="">
+                                            <ul>
+                                                <li class="clearfix">
+                                                    <a><i class="fa fa-user"></i>&nbsp; Hisham</a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a><i class="fa fa-cog"></i>&nbsp; Settings</a>
+                                                </li>
+                                                <li class="clearfix">
+                                                    <a><i class="fa fa-sign-out"></i>&nbsp; SignOut</a>
+                                                </li>
+                                            </ul>
+                                        </div>      <!--END OF USER DROPDOWN-->
+                                        <script>
+                                            $("img#user-profile-img").click(function(){
+                                               var x = $("div#user-profile"); 
+                                                if(x.hasClass("open")){
+                                                    x.removeClass("open");
+                                                    x.addClass("close");
+                                                }else{
+                                                    x.removeClass("close");
+                                                    x.addClass("open");
+                                                }
+                                            });
+                                            $("div#user-profile > ul > li:nth-child(2)").click(function(){
+                                                alert("Settings");
+                                               var x = $("div#user-profile"); 
+                                                    x.removeClass("open");
+                                                    x.addClass("close");
+                                            })
+                                            $("div#user-profile > ul > li:nth-child(3)").click(function(){
+                                                alert("SignOUt");
+                                               var x = $("div#user-profile"); 
+                                                    x.removeClass("open");
+                                                    x.addClass("close");
+                                            })
+                                        </script>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr style="margin-top:20px;">
+        
+        <div class = "tinfomain">
+                <span> SHUJA UR REHMAN </span>
+            <div class = "tinfo">
+                <div class = "tpic">
+                    
+                     
+                    <center><img src="../images/shuja.png"> </img>
+                    </center>
+                      
+                </div>
+                
+                <div class = "tdata">
+                    <h1> INTRO TO TEACHER </h1>
+                </div>
+            </div>
+            
+            <div class="tfiles">
+                
+                
+                 <table cellpadding=3 border="3" style="width:100%; color:blue">
+                            <tr>
+                                <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            </tr>
+                            
+                            
+                        </table>
+                
+                
+            </div>    
+        </div>
+    
+        <div class = "tinfomain2">
+            
+            <span> SHUJA UR REHMAN </span>
+            <div class = "tinfo">
+                <div class = "tpic">
+                    
+                     
+                    <center><img src="../images/shuja.png"> </img>
+                    </center>
+                      
+                </div>
+                
+                <div class = "tdata">
+                        <h1> INTRO TO TEACHER </h1>
+                </div>
+            </div>
+            
+            <div class="tfiles">
+                
+                
+                
+                        <table cellpadding=3 border="3" style="width:100%; color:blue">
+                            <tr>
+                                <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            <td>
+                                <a href="#"></a>File 1 ........<br>
+                                27-10-15  03:55
+                            </td>
+                            </tr>
+                            
+                            
+                        </table>
+                
+                
+            </div>    
+    </div>      
+   <!--     
+      <div id ="footer">
+            <div class ="rights">
+                ALL RIGHTS ARE RESERVED
+            </div>
+          
+            <div class ="txt">
+                This is only for PUCIT USERS
+            </div>
+          
+            <div class ="search">
+                
+                <form > 
+                    <table cellpadding="0px" cellspacing="0px"> 
+                        <tr> 
+                            <td style="border-style:solid none solid solid;border-                                  color:#4B7B9F;border-width:1px;">
+                            <input type="text" placeholder="Search here"                                         style="width:300px; border:0px solid; height:17px;                                      padding:0px 3px; position:relative;"> 
+                                </td>
+                            <td style="border-style:solid;border-                                                       color:#4B7B9F;border-width:1px;"> 
+                                        <input type="submit" value="" style="border-                                            style: none; background:                                                    url('searchbutton3.gif') no-repeat; width: 25px;                                    height: 20px;">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+          
+            <div class ="contents">
+                
+                <a href="#" > Contact
+                </a>
+                <br >
+                
+                <a href="#" > Find us
+                </a>
+                <br>
+                
+                <a href="#" > See Terms and Conditions
+                </a>
+                <br>
+                            <a href= "#"> 
+                                <div class = "pic">
+                                    
+                                </div>
+                            </a>    
+                
+            </div>
+        </div>
+-->
+
+    </body>
+</html>  

@@ -1,0 +1,91 @@
+
+ body{
+/*
+background-image: url(background6.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+*/
+
+
+}
+#Contact-main{
+
+    width:100%; 
+    margin: auto ;
+    padding: 0;
+
+}
+#Contact-header
+{
+
+}
+#Contact-content{
+    text-align: center ;
+
+}
+#Contact-Content1{
+    background-color: lightgrey;
+  
+}
+
+#Contact-Content1-b{
+    float: right;
+
+}
+#Contact-Content1-a{
+
+    float: left;
+
+}
+
+
+
+ #Contact-Content2{
+    background-color: lightgrey;
+    
+
+}
+#Contact-Content3{
+    background-color: lightgrey;
+     
+
+}
+
+#Contact-Content3-a{
+
+    float: right;
+}
+  #Contact-Content3-b{        
+    float: left;
+
+}
+
+
+ #Contact-Content4{
+    background-color: lightgrey;
+     
+
+}
+#Contact-Content4-a{
+
+    float: right;
+}
+  #Contact-Content4-b{
+    float: left;
+
+}
+
+#Contact-Content5{
+     background-color: lightgrey;
+     
+}
+
+#Contact-Content5-a{
+
+    float: right;
+
+}
+  #Contact-Content5-b{
+    float: left;
+
+}
