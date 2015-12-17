@@ -1,4 +1,10 @@
 <html>
+    <?php
+  include('../prac.php');?>
+    <?php
+session_start();
+$_SESSION['user']=1;
+?>
 <head>
     <link rel="stylesheet" type="text/css" href="classroomTA.css">
         <link rel="stylesheet" type="text/css" href="../../css/headr.css">
@@ -109,7 +115,7 @@
                     <div id="classroomT-mainContent"></div>
                     <div id="classroomT-Content1">
                         <div id="classroomT-content1-b">
-                        <span style="font-size:16px;padding:2px;font-family:sans-serif; border-style:solid;display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;"><i>As Classroom's Teacher.</i> </span>
+                        <span style="font-size:16px;padding:2px;font-family:sans-serif; border-style:solid;display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;"><i>As Classroom's TA</span>
                 </div>
                 <div id="classroomS-Content1-a">
                     &nbsp;&nbsp;
@@ -125,18 +131,31 @@
                         //////////////////////////////////////////////////////////////////
                         //////////////////////////////////////////////////////////////////-->
                         
-                        <div style="display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;">
-                            <div style="display:table-cell;">
-                                   <a href="../ClassRooms_Announcements_Teacher_TA.html"> <img src="img1.gif"  /></a>
-                            </div>
-                            <div style="display:table-cell;vertical-align:middle;">  
-                                <b>Class:</b> bscsf11.<br>
-                                <b>Section:</b> Morning.<br>
-                                <b>Student:</b> 63.
-                                <hr>
-                                OSInstructora. 
-                            </div>
-                        </div>
+                    <?php
+                            $aa = $_SESSION["user"];
+                            $sql = "SElect c.courseName ,c.description , p.fname, p.lname from courses c , person p , classes c1 , ta t where c1.classId = t.classId ";
+                            $result = mysqli_query($conn,$sql);
+                            $record_found=mysqli_num_rows($result); 
+                            if($record_found > 0 )
+                            {
+                                while($row=mysqli_fetch_assoc($result))
+                                    {
+                                    
+                                        echo    
+                                    '<div style="display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;height:80px;">
+                                        <div style="display:table-cell;">
+                                        <a href="../ClassRooms_Announcements_Teacher_TA.html"> <img src="img1.gif"  /></a>
+                                        </div>
+                                        <div style="display:table-cell;vertical-align:middle;">  
+                                            <b>Class:</b> '.$row['courseName'].'<br>
+                                            <b>Description:</b>'.$row['description'].'<br>
+                                            <br>
+                                                '.$row['fname'].' '.$row['lname'].' 
+                                        </div>
+                                        </div>';
+                                }
+                                }
+                        ?>
                         
                         
                         <!--

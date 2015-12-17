@@ -97,31 +97,22 @@ body{
         }
        
        
-#classroomS-Content1-b{
-
-   text-align: right;
-   float:right ;
-    width: 50%;
-
-}
+       #classroomS-Content1-b{
+           
+           text-align: right;
+           float:right ;
+            width: 50%;
        
-#classroomS-Content2{
-    text-align: center;
-}
-.one {
-    border-style:solid;
-    border-width: medium;
-    border-color: black;
-}
-
-div#classroomS-Content1-b.two > span{
-    font-size:16px;
-    padding:2px;
-    font-family:sans-serif;
-    border-style:solid;
-    display:table;
-    box-shadow:8px 10px 15px 1px white;
-    margin:10px;
-    margin-bottom:50px;
-    border-color:white;    
-}
+       }
+       
+       #classroomS-Content2{
+            
+           
+            text-align: center;
+       
+       }
+       .one {
+        border-style:solid;
+        border-width: medium;
+        border-color: black;
+       }

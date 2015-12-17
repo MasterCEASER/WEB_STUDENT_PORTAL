@@ -1,6 +1,16 @@
+
+
+
 <html>
+    
+ <?php
+  include('../prac.php');?>
+    <?php
+session_start();
+$_SESSION['user']=2;
+?>
 <head>
-    <link rel="stylesheet" type="text/css" href="classroomTA.css">
+    <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" type="text/css" href="../../css/headr.css">
         <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min.css">
         <script src="../../js/jquery-2.1.4.min.js"></script>
@@ -102,53 +112,59 @@
             </div>
         </div>
         <hr style="margin-top:20px;">
-        <div id="content">    
-            <div id="classroomT-main">
-
-                <div id="classroomT-Content">
-                    <div id="classroomT-mainContent"></div>
-                    <div id="classroomT-Content1">
-                        <div id="classroomT-content1-b">
-                        <span style="font-size:16px;padding:2px;font-family:sans-serif; border-style:solid;display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;"><i>As Classroom's Teacher.</i> </span>
+    <div id="content">    
+    <div id="classroomS-main" >    
+        <div id="classroomS-Content">
+            <div id="classroomS-mainContent"></div>
+            <div id="classroomS-Content1">
+                <div id="classroomS-Content1-b" class="two"><br>
+                    <span style="font-size:16px;padding:2px;font-family:sans-serif; border-style:solid;display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;"><i>As Classroom's Student.</i> </span>
                 </div>
                 <div id="classroomS-Content1-a">
                     &nbsp;&nbsp;
                     <span style="font-size:26px;padding:2px;font-family:sans-serif; font-style: italic; font-weight: bold;">Class Room.</span>
                 </div>
-                </div>
-                <div id="classroomT-Content2 ">
-                    <div style="padding:10px;margin:10px;">
-                        <!--
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////-->
-                        
-                        <div style="display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;">
-                            <div style="display:table-cell;">
-                                   <a href="../ClassRooms_Announcements_Teacher_TA.html"> <img src="img1.gif"  /></a>
-                            </div>
-                            <div style="display:table-cell;vertical-align:middle;">  
-                                <b>Class:</b> bscsf11.<br>
-                                <b>Section:</b> Morning.<br>
-                                <b>Student:</b> 63.
-                                <hr>
-                                OSInstructora. 
-                            </div>
+            </div>
+                 
+                    <?php
+                            $aa = $_SESSION["user"];
+                            $sql = "SElect c.courseName , c1.courseId ,c.description , p.fname, p.lname from courses c , person p ,classes c1 , student s where c1.classId = s.classId AND p.id=s.studentId";/*                    echo $sql."<br>";*/
+    
+                            $result = mysqli_query($conn,$sql);
+                            $record_found=mysqli_num_rows($result); 
+                            if($record_found > 0 )
+                            {
+                                while($row=mysqli_fetch_assoc($result))
+                                    {
+                                    
+                                        echo    
+                                    '
+            <div id="classroomS-Content2 ">
+                <div style="padding:10px;margin:10px;">
+                    <div style="display:table;box-shadow:8px 10px 15px 1px white;margin:10px;margin-bottom:50px;border-color:white;">
+                        <div style="display:table-cell;">
+                               <a href="../ClassRooms_Announcements.html"> <img src="img1.gif"  /> </a>
                         </div>
-                        
-                        
-                        <!--
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////
-                        //////////////////////////////////////////////////////////////////-->
-                        
-                    </div>
+                        <div style="display:table-cell;vertical-align:middle;">  
+                                     <b>Class:</b> '.$row['courseName'].'<br>
+                                            <b>Code:</b>'.$row['courseId'].'<br>
+                                             <b>Credits:</b>'.$row['description'].'<br>
+                                            <br>
+                                                '.$row['fname'].' '.$row['lname'].' 
+                        </div>
+                    </div>  ';
+                                             }
+                                }
+                                            ?>
+                  
+                    </div>       
                 </div>
+              
             </div>
         </div>
-    </body>
+    </div>
+</body>
+    
+    
+  
 </html>
