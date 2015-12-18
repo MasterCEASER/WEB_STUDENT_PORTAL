@@ -1,7 +1,6 @@
 <?php
-    include('prac.php');
+    include('../connect/prac.php');
     session_start();
-    $_SESSION['user']=2;
 ?>
 <html>
 <head>    
@@ -113,7 +112,7 @@
                                             <img class="class_img" src="'.$row['image'].'">
                                         </div>
                                         <div style="display:table-cell;vertical-align:middle;padding-left: 60px;">  
-                                            <a>
+                                            <a href="../classroomController.php?type=1&class='.$row['classId'].'">
                                                 <h2 style="text-align: center;">'.$row['courseName'].'</h2>                                
                                             </a>
                                             <ul>

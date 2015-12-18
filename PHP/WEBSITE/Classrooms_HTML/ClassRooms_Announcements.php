@@ -7,11 +7,12 @@
 //        $c = $_SESSION['course'];
         $class = $_REQUEST['class'];
 ?>
+<?php $c=$_REQUEST['class']; ?>
 <ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13px;">
-                        <li><a href=<?php echo "'ClassRooms_Info.php?class=$class'"; ?>>Information </a></li>
-                        <li class="li_active"><a href=<?php echo "'ClassRooms_Announcements.php?class=$class'"; ?>>Announcements</a></li>
-                        <li><a href=<?php echo "'ClassRooms_Files.php?class=$class'"; ?>>Files</a></li>
-                        <li><a href=<?php echo "'ClassRooms_Posts.php?class=$class'"; ?>>Posts</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Info.php?class='.$c.'"' ?> >Information </a></li>
+                        <li class="li_active"><a href=<?php echo '"ClassRooms_Announcements.php?class='.$c.'"' ?> >Announcements</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Files.php?class='.$c.'"' ?>>Files</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Posts.php?class='.$c.'"' ?>>Posts</a></li>
                     </ul>
                     </div>
 <div id="Announcements" class="sub_child_content sub_main_content" >

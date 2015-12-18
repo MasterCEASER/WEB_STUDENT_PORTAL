@@ -13,8 +13,9 @@ if (file_exists($file)) {
     readfile($file);
     exit;
 }
+    echo $_REQUEST['file_dwn'];
     $r = $_REQUEST['redirect'];
-    header('Location:'.$r);
+    header('Location:'.$r.'?class='.$_REQUEST['class']);
 
 }
 ?>

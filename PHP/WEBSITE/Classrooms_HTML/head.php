@@ -1,8 +1,6 @@
 <?php
 include('connectPDO.php');
 session_start();
-$_SESSION['user'] = 3;
-$_SESSION['class'] = 1;
 ?>   
 <html>
     <head>        

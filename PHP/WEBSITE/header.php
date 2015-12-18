@@ -22,7 +22,7 @@
                                             </a>
                                         </li>
                                         <li style="display:table-cell;algin:right">
-                                            <a href="../Classrooms_HTML/classrommS/classroom_S.html" >
+                                            <a href="/PHP_PRO/PHP/WEBSITE/classesController.php" >
                                                 <i class="fa fa-linkedin-square"></i>
                                                 ClassRooms
                                             </a>

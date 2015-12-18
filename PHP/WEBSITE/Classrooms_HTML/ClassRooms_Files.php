@@ -5,18 +5,19 @@
             include ('classbodyhead.php');
             
         ?>
+<?php $c=$_REQUEST['class']; ?>
 <ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13px;">
-                        <li ><a href="ClassRooms_Info.php">Information </a></li>
-                        <li><a href="ClassRooms_Announcements.php">Announcements</a></li>
-                        <li class="li_active"><a href="ClassRooms_Files.php">Files</a></li>
-                        <li><a href="ClassRooms_Posts.php">Posts</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Info.php?class='.$c.'"' ?> >Information </a></li>
+                        <li><a href=<?php echo '"ClassRooms_Announcements.php?class='.$c.'"' ?> >Announcements</a></li>
+                        <li class="li_active"><a href=<?php echo '"ClassRooms_Files.php?class='.$c.'"' ?>>Files</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Posts.php?class='.$c.'"' ?>>Posts</a></li>
                     </ul>
                     </div>
                     <div id="Announcements" class="sub_main_content sub_child_content">
                         <h3>Files</h3>
                         <table cellpadding=15 style="width:100%;">
                             <?php 
-                            $sql = 'select path,DATE_FORMAT(uploadTime,"%d-%m-%y %H:%i:%s") as ut,file from files where classId = '.$_SESSION['class'].' order by uploadTime desc;';
+                            $sql = 'select path,DATE_FORMAT(uploadTime,"%d-%m-%y %H:%i:%s") as ut,file from files where classId = '.$_REQUEST['class'].' order by uploadTime desc;';
         $res = $db->query($sql);
         while($row = $res->fetch(PDO::FETCH_ASSOC))
         {
@@ -26,6 +27,7 @@
                                 <p style="color:grey;"><i>'.$row['ut'].'</i></p>
                                 </div><div style="width:19%;float:right;">
                                 <form action="download.php">
+                                <input type="hidden" name="class" value='.$c.'>
                                 <input type="hidden" name="file_dwn" value="'.$row['path'].'">
                                 <input type="hidden" name="file_name" value="'.$row['file'].'">
                                 <input type="hidden" name="redirect" value="ClassRooms_Files_TA_Teacher.php">

@@ -1,5 +1,5 @@
 <?php
-    include('prac.php');
+    include('../connect/prac.php');
     session_start();
     $_SESSION['user']=2;
 ?>       
@@ -32,7 +32,7 @@
                 <div style="background-color:lightgray;">
                      <?php
                     $aa = $_SESSION["user"];
-                    $sql = "Select c.courseName ,c1.courseId,c.credits,c.description , p.fname, p.lname ,c1.image from courses c , person p , classes c1 , ta t where c1.classId = t.classId and c.courseId = c1.courseId and t.studentId=p.id and t.studentId = $aa"; 
+                    $sql = "Select c1.classId,c.courseName ,c1.courseId,c.credits,c.description , p.fname, p.lname ,c1.image from courses c , person p , classes c1 , ta t where c1.classId = t.classId and c.courseId = c1.courseId and t.studentId=p.id and t.studentId = $aa"; 
                     $result = mysqli_query($conn,$sql);
                     $record_found=mysqli_num_rows($result); 
                     if($record_found > 0 )
@@ -48,7 +48,7 @@
                                             <img class="class_img" src="'.$row['image'].'">
                                         </div>
                                         <div style="display:table-cell;vertical-align:middle;padding-left: 60px;">  
-                                            <a>
+                                            <a href="../classroomController.php?type=1&class='.$row['classId'].'">
                                                 <h2 style="text-align: center;">'.$row['courseName'].'</h2>                                
                                             </a>
                                             <ul>

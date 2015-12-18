@@ -4,11 +4,12 @@
             include ('../header.php');
             include ('classbodyhead_t.php');
         ?>
+<?php $c=$_REQUEST['class']; ?>
 <ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13;">
-                        <li><a href="ClassRooms_Info_TA_Teacher.php">Information </a></li>
-                        <li><a href="ClassRooms_Announcements_Teacher_TA.php">Announcements</a></li>
-                        <li><a href="ClassRooms_Files_TA_Teacher.php">Files</a></li>
-                        <li class="li_active"><a href="ClassRooms_Posts_Teacher_TA.php">Posts</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Info_TA_Teacher.php?class='.$c.'"' ?> >Information </a></li>
+                        <li><a href=<?php echo '"ClassRooms_Announcements_Teacher_TA.php?class='.$c.'"' ?>>Announcements</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Files_TA_Teacher.php?class='.$c.'"' ?>>Files</a></li>
+                        <li class="li_active"><a href=<?php echo '"ClassRooms_Posts_Teacher_TA.php?class='.$c.'"' ?>>Posts</a></li>
                     </ul>
                     </div>
                     <div id="Posts" class="sub_main_content sub_child_content" >
@@ -18,7 +19,7 @@
                             <?php
                             if(isset($_REQUEST["Post"]) == true){
                                 $d = $_REQUEST['pt'];
-                                $class = $_SESSION['class'];
+                                $class = $_REQUEST['class'];
                                 $u = $_SESSION['user'];
                                 $sql = "insert into post(postedBy,postDesc,classId) values ($u,'$d',$class);";
                                 $res = $db->query($sql);
@@ -28,6 +29,7 @@
                                 <textarea  id="new_post_text" name="pt" class="new_text"  placeholder="Write ............"></textarea>
                                 <hr>
                                 <div class="" id="btn_div" >
+                                    <input type="hidden" name="class" value=<?php echo $c ?>>
                                     <input class="btn" type="submit" class="" value="Post" name="Post">
                                     <input class="btn" type="button" value="Cancel">
                                 </div>
@@ -35,7 +37,7 @@
                         </div>
                         <div id="old_posts" class="post_wrapper">
                             <?php
-        $sql = 'select fname,lname,postDesc,postTime from post,person where person.id=postedBy and classId = '.$_SESSION['class'].' order by postTime desc;';
+        $sql = 'select fname,lname,postDesc,postTime from post,person where person.id=postedBy and classId = '.$_REQUEST['class'].' order by postTime desc;';
         $res = $db->query($sql);
         while($row = $res->fetch(PDO::FETCH_ASSOC))
         {

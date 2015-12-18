@@ -15,19 +15,20 @@
     font-family: sans-serif;
     }
 </style>
-    <ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13;">
-        <li class="li_active"><a href="ClassRooms_Info_TA_Teacher.php">Information </a></li>
-        <li><a href="ClassRooms_Announcements_Teacher_TA.php">Announcements</a></li>
-        <li><a href="ClassRooms_Files_TA_Teacher.php">Files</a></li>
-        <li><a href="ClassRooms_Posts_Teacher_TA.php">Posts</a></li>
-    </ul>
+<?php $c=$_REQUEST['class']; ?>
+<ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13;">
+                        <li  class="li_active"><a href=<?php echo '"ClassRooms_Info_TA_Teacher.php?class='.$c.'"' ?> >Information </a></li>
+                        <li><a href=<?php echo '"ClassRooms_Announcements_Teacher_TA.php?class='.$c.'"' ?>>Announcements</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Files_TA_Teacher.php?class='.$c.'"' ?>>Files</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Posts_Teacher_TA.php?class='.$c.'"' ?>>Posts</a></li>
+                    </ul>
 </div>
 <div class="sub_child_content sub_main_content" >
     <div id='desc'>
     <h3>Description</h3>
     <textarea disabled=true>
     <?php
-        $sql = 'select description,courseOutline from classes where classId = '.$_SESSION['class'].';';
+        $sql = 'select description,courseOutline from classes where classId = '.$_REQUEST['class'].';';
         $res = $db->query($sql);
         $row = $res->fetch(PDO::FETCH_NUM);
         echo $row[0];

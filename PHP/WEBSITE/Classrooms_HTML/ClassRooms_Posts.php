@@ -5,11 +5,12 @@
             include ('classbodyhead.php');
         ?>
 
+<?php $c=$_REQUEST['class']; ?>
 <ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13px;">
-                        <li><a href="ClassRooms_Info.php">Information </a></li>
-                        <li><a href="ClassRooms_Announcements.php">Announcements</a></li>
-                        <li><a href="ClassRooms_Files.php">Files</a></li>
-                        <li class="li_active"><a href="ClassRooms_Posts.php">Posts</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Info.php?class='.$c.'"' ?> >Information </a></li>
+                        <li><a href=<?php echo '"ClassRooms_Announcements.php?class='.$c.'"' ?> >Announcements</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Files.php?class='.$c.'"' ?>>Files</a></li>
+                        <li class="li_active"><a href=<?php echo '"ClassRooms_Posts.php?class='.$c.'"' ?>>Posts</a></li>
                     </ul>
 </div>
                     <div id="Posts" class="sub_main_content sub_child_content" >
@@ -19,7 +20,7 @@
                             <?php
                             if(isset($_REQUEST["Post"]) == true){
                                 $d = $_REQUEST['pt'];
-                                $class = $_SESSION['class'];
+                                $class = $_REQUEST['class'];
                                 $u = $_SESSION['user'];
                                 $sql = "insert into post(postedBy,postDesc,classId) values ($u,'$d',$class);";
                                 $res = $db->query($sql);
@@ -36,7 +37,7 @@
                         </div>
                         <div id="old_posts" class="post_wrapper">
                             <?php
-        $sql = 'select fname,lname,postDesc,postTime from post,person where person.id=postedBy and classId = '.$_SESSION['class'].' order by postTime desc;';
+        $sql = 'select fname,lname,postDesc,postTime from post,person where person.id=postedBy and classId = '.$_REQUEST['class'].' order by postTime desc;';
         $res = $db->query($sql);
         while($row = $res->fetch(PDO::FETCH_ASSOC))
         {

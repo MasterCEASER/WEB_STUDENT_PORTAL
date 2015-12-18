@@ -6,11 +6,12 @@
         include ('../header.php');
         include ('classbodyhead_t.php');
         ?>
+<?php $c=$_REQUEST['class']; ?>
 <ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13;">
-                        <li><a href="ClassRooms_Info_TA_Teacher.php">Information </a></li>
-                        <li class="li_active"><a href="ClassRooms_Announcements_Teacher_TA.php">Announcements</a></li>
-                        <li><a href="ClassRooms_Files_TA_Teacher.php">Files</a></li>
-                        <li><a href="ClassRooms_Posts_Teacher_TA.php">Posts</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Info_TA_Teacher.php?class='.$c.'"' ?> >Information </a></li>
+                        <li class="li_active"><a href=<?php echo '"ClassRooms_Announcements_Teacher_TA.php?class='.$c.'"' ?>>Announcements</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Files_TA_Teacher.php?class='.$c.'"' ?>>Files</a></li>
+                        <li><a href=<?php echo '"ClassRooms_Posts_Teacher_TA.php?class='.$c.'"' ?>>Posts</a></li>
                     </ul>
                     </div>
                     <div id="Announcements" class="sub_child_content sub_main_content" >
@@ -22,13 +23,14 @@
                             if(isset($_REQUEST["Post"]) == true){
                                 $s = $_REQUEST['ns'];
                                 $a = $_REQUEST['na'];
-                                $c = $_SESSION['class'];
+                                $c = $_REQUEST['class'];
                                 $sql = "insert into announcemnet(subject,description,classId) values ('$s','$a',$c);";
                                 $res = $db->query($sql);
                             }
                             ?>
                             <form>
                                 <div class="subject"><h4>Subject:</h4>
+                                    <input type="hidden" name="class" value=<?php echo $c ?>>
                                     <input type="text" name="ns">
                                 </div>
                                 <hr/>
@@ -42,7 +44,7 @@
                         </div>
                         <div class="post_wrapper">
                             <?php 
-                            $sql = 'Select * from announcemnet where classId='.$_SESSION['class'].' order by time desc;';
+                            $sql = 'Select * from announcemnet where classId='.$_REQUEST['class'].' order by time desc;';
                             $res = $db->query($sql);
                             while($row = $res->fetch(PDO::FETCH_ASSOC))
                             {
@@ -65,23 +67,7 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
-<!--
-
-            <div id="class-announcements-sidebar">
-                <div id="class-logo-announcements-content">
-                    <img src="../Images/class-logo.jpg" alt="Image Not Found...." >
-                </div>
-                <div id="class-info-announcements-content">
-                    <h3>Description:</h3>
-                    <div id="description">
-                        Provides an introduction to the discipline of Web Engineering. This course aims to introduce the methods and techniques used in Web-based system development.
-                    </div>
-                </div>
-            </div>
--->
-        
         </div>
       
     </body>

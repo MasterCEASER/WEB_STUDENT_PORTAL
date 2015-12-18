@@ -4,16 +4,21 @@
                 <h2>Class : <i>
                     <?php
                     
-        $sql = 'select courseName from courses where courseId = (select courseId from classes where classId = '.$_SESSION['class'].' LIMIT 1)';
+        $sql = 'select c.courseName,c1.image from courses c,classes c1 where c.courseId = c1.courseId and classId ='.$_REQUEST['class'];
         $res = $db->query($sql);
         $row = $res->fetch(PDO::FETCH_ASSOC);
             echo $row['courseName'];
+                    $img = '../'.$row['image'];
+                    if((empty($img) == true) || (file_exists($img) == false))
+                    {
+                        $img = '../image/default.jpg';
+                    }
                     ?>
                     </i></h2>
                 <div id="sub-content">
                     <div id="class-announcements-sidebar" class="sub_child_content" style="border: 0px solid black;">
                         <div id="class-logo-announcements-content">
-                            <img class=""  src="../Images/class-logo.jpg" alt="Image Not Found...." >
+                            <img class=""  src=<?php echo $img; ?> alt="Image Not Found...." >
                         </div>
                         <hr/>
                     
