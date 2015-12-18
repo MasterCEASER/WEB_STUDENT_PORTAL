@@ -2,21 +2,22 @@
         include ('head.php');
         include ('../header.php');
         include ('classbodyhead.php');
+
+        $u = $_SESSION['user'];
+//        $c = $_SESSION['course'];
+        $class = $_REQUEST['class'];
 ?>
 <ul id="sub-nav" class="sub_child_content" style="min-width: 220px;position: relative;left: 13px;">
-                        <li><a href="ClassRooms_Info.php">Information </a></li>
-                        <li class="li_active"><a href="ClassRooms_Announcements.php">Announcements</a></li>
-                        <li><a href="ClassRooms_Files.php">Files</a></li>
-                        <li><a href="ClassRooms_Posts.php">Posts</a></li>
+                        <li><a href=<?php echo "'ClassRooms_Info.php?class=$class'"; ?>>Information </a></li>
+                        <li class="li_active"><a href=<?php echo "'ClassRooms_Announcements.php?class=$class'"; ?>>Announcements</a></li>
+                        <li><a href=<?php echo "'ClassRooms_Files.php?class=$class'"; ?>>Files</a></li>
+                        <li><a href=<?php echo "'ClassRooms_Posts.php?class=$class'"; ?>>Posts</a></li>
                     </ul>
                     </div>
 <div id="Announcements" class="sub_child_content sub_main_content" >
     <h3>Announcements</h3>
     <div class="post_wrapper">
         <?php
-        $u = $_SESSION['user'];
-        $c = $_SESSION['course'];
-        $class = $_SESSION['class'];
         $sql = 'Select * from announcemnet where classId = '.$class.';';
         $res = $db->query($sql);
         while($row = $res->fetch(PDO::FETCH_ASSOC))
