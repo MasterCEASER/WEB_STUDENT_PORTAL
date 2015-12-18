@@ -14,6 +14,222 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+     
+		
+           
+                
+			var data = {"action": "getdata"};
+			
+			//object pass to $.ajax function to make an AJAX call.
+			var settings= {
+				type: "POST",
+				dataType: "json",
+				url: "home.php",
+				data: data,
+				success: function(response) {
+					console.log('Recieved from server:');
+					console.log('Recieved from server:');
+                    
+                                        
+                                    for(var key in response.data)
+                                    {
+                                        var row = response.data[key];
+                                        var a = row.postDesc;
+                                       var n = row.apostDesc;
+                                     
+                                        
+                                        
+                                       
+                                         $('.display').append(" <li><span id = 'hufeed'> Univeristy Feed: </span> <a href='#'>  "+a.split("\n",1)+" </a> </br> <span style = 'font-color:black'> Posted By:"+row.postedby+" </span> </li>")
+                                    
+                                    }
+				},
+				error: function (err, type, httpStatus) {
+					alert('error has occured');
+				}
+			};
+			
+			$.ajax(settings);
+			console.log('request sent');
+					
+		
+            var data = {"action": "getdata"};
+			
+			//object pass to $.ajax function to make an AJAX call.
+			var settings= {
+				type: "POST",
+				dataType: "json",
+				url: "home2.php",
+				data: data,
+				success: function(response) {
+					console.log('Recieved from server:');
+					console.log('Recieved from server:');
+                    
+                                        
+                                    for(var key in response.data)
+                                    {
+                                        var row = response.data[key];
+                                        
+                                        var a = row.apostDesc;
+                                        
+                                        
+                                      $('.display').append(" <li><span id = 'clfeed'> Class Feed: </span> <a href='#'>  "+a.split("\n",1)+" </a> </br> <span style = 'font-color:black'> Posted By:"+row.apostedby+" </span> </li>")
+                                        
+                                        
+                                       
+                                         
+                                    
+                                    }
+				},
+				error: function (err, type, httpStatus) {
+					alert('error has occured');
+				}
+			};
+			
+			$.ajax(settings);
+			console.log('request sent');
+					
+		
+    
+
+    
+    
+                 
+                     
+                     
+                     
+                     
+            var data = {"action": "getdata"};
+			
+			//object pass to $.ajax function to make an AJAX call.
+			var settings= {
+				type: "POST",
+				dataType: "json",
+				url: "home3.php",
+				data: data,
+				success: function(response) {
+					console.log('Recieved from server:');
+					console.log('Recieved from server:');
+                    var i = 0;
+                    for(var key in response.data)
+                        {
+                            i++;
+                                 
+                        }
+                    
+                    $html =  $('.efirstfeed .descr').html(); 
+                    
+                    var row = response.data[0];
+                    $('.efirstfeed .descr').html(""+$html+" <br> <Span id = 'hufeed'> SUBJECT: <a href='#'>  "+row.subject+" </a> <br> <br> <Span id = 'hufeed'>AnnouncedBy: </span> <Span id = 'clfeed'>"+row.announceby+"</span>");
+                    
+                      
+                            var j = 1;
+                             setInterval(function(){
+                                 if(j < i )
+                                 {
+                                     row = response.data[j]; 
+                                 }  
+                                 else
+                                 {
+                                     j = 0;
+                                 }
+                                j++;        
+                          
+                            
+                             $('.efirstfeed .descr').html(""+$html+" <br> <Span id = 'hufeed'> SUBJECT: <a href='#'>  "+row.subject+" </a> <br> <br> <Span id = 'hufeed'>AnnouncedBy: </span> <Span id = 'clfeed'>"+row.announceby+"</span>");
+                                        
+                            },100000);                  
+                                 
+                                               
+                        
+                    
+                   
+               
+                                   
+				},
+				error: function (err, type, httpStatus) {
+					alert('error has occured');
+				}
+			};
+			
+			$.ajax(settings);
+			console.log('request sent'); // end of Class Annoucements
+    
+    
+    
+    
+    
+    
+             var data = {"action": "getdata"};
+			
+			//object pass to $.ajax function to make an AJAX call.
+			var settings= {
+				type: "POST",
+				dataType: "json",
+				url: "home4.php",
+				data: data,
+				success: function(response) {
+                   
+                   
+                if(  response.data[0] == undefined)
+                {
+                      $html =  $('.esecondfeed .descr').html();
+                     $('.esecondfeed .descr').html(""+$html+" <br> <Span id = 'hufeed'> No Annoucements </span>");
+                    return false;
+                
+                }
+					console.log('Recieved from server:');
+					console.log('Recieved from server:');
+                    var b = 0;
+                    for(var key in response.data)
+                        {
+                            b++;
+                                 
+                        }
+                    
+                    $html =  $('.esecondfeed .descr').html(); 
+                    
+                    var row = response.data[0];
+                    $('.esecondfeed .descr').html(""+$html+" <br> <Span id = 'hufeed'> SUBJECT: <a href='#'>  "+row.subject+" </a> <br> <br> <Span id = 'hufeed'>AnnouncedBy: </span> <Span id = 'clfeed'>"+row.announceby+"</span>");
+                    
+                      
+                            var n = 1;
+                             setInterval(function(){
+                                 if(n < b )
+                                 {
+                                     row = response.data[n]; 
+                                 }  
+                                 else
+                                 {
+                                     n = 0;
+                                 }
+                                n++;        
+                          
+                            
+                             $('.esecondfeed .descr').html(""+$html+" <br> <Span id = 'hufeed'> SUBJECT: <a href='#'>  "+row.subject+" </a> <br> <br> <Span id = 'hufeed'>AnnouncedBy: </span> <Span id = 'clfeed'>"+row.announceby+"</span>");
+                                        
+                            },100000);                  
+                                 
+                                               
+                        
+                    
+                   
+               
+                                   
+				},
+				error: function (err, type, httpStatus) {
+					alert('error has occured');
+				}
+			};
+			
+			$.ajax(settings);
+			console.log('request sent');
+                   
+                   
+     
+                        
+					
+    
 
 	var dd = $('.vticker').easyTicker({
 		direction: 'up',
@@ -33,10 +249,8 @@ $(document).ready(function(){
 	
 	$tr = "Class Feed";
     
-	$('.aa').click(function(){
-		$('.vticker ul').append('<li><a href="#">' + $tr + '  <a href = "#"> Muhammad Tayyab posted in Cs  </a></li>');
-		
-	});
+	
+    $('.ww').append("<span id = 'hufeed'> Univeristy Feed: </span> <a href='#'>  hisham Posted in CS group </a>")
 	
 	$('.vis').click(function(){
 		dd.options['visible'] = 3;
@@ -77,7 +291,12 @@ $(document).ready(function(){
     #hufeed{
      color:black; 
     
-    }    
+    }
+    
+    #clfeed{
+    
+    color:coral;
+    }
 </style>
     </head>
     <body>
@@ -193,7 +412,7 @@ $(document).ready(function(){
                           <div class="descr">
                               <center>
                                   <Span>
-                                      LITERAY SOCIETY
+                                    CLASS ANNOUCEMENTS
                                   </span>      
                               </center>  
                         </div>       
@@ -209,7 +428,7 @@ $(document).ready(function(){
                           <div class="descr">
                               <center>
                                   <Span>
-                                      LITERAY SOCIETY
+                                      UNIVERSITY ANNOUCEMENTS
                                   </span>      
                               </center>  
                         </div>       
@@ -236,7 +455,7 @@ $(document).ready(function(){
             
             <div class = "unifeed">
                 
-                <button class="aa">ADD</button>
+                
 <button class="vis">SET VISIBLE 3</button>
 <button class="visall">SET VISIBLE ALL</button>
 
@@ -245,13 +464,8 @@ $(document).ready(function(){
 <button class="toggle">TOGGLE</button>
 
 <div class="vticker">
-	<ul>
-        <li class="ww"> <span id = "hufeed"> Univeristy Feed: </span> <a href="#">  Muhammad Tayyab Posted in CS group </a></li> 
-		<li> <span> Class Feed: </span> <a href="../Classrooms_HTML/ClassRooms_Posts.html">  Muhammad Tayyab Posted in CS group </a></li>
-        <li><span id = "hufeed"> Univeristy Feed: </span> <a href="../post_HTML/GLOBAL%20POST.html"> There will be no holiday on 9th november.university will remain open as per schedule  </a> <br> <b> <span> MADAM MEHWISH KEYANI</span> </b> </li>
-		<li><span> Class Feed: </span> <a href="../Classrooms_HTML/ClassRooms_Posts.html">  Muhammad Tayyab Posted in CS group </a></li>
-		<li><span id = "hufeed"> Univeristy Feed: </span> <a href="../Classrooms_HTML/ClassRooms_Posts.html">  Muhammad Tayyab Posted in CS group </a></li>
-        <li class="ww"> <span> Class Feed: </span> <a href="../Classrooms_HTML/ClassRooms_Posts.html">  Muhammad Tayyab Posted in CS group </a></li>
+	<ul class = "display">
+        
 	</ul>
 </div>
                 
