@@ -1,4 +1,55 @@
- <html>
+ <?php include('home/connect.php'); 
+session_start();
+ $error = "";
+
+if(isset($_REQUEST["submit"]) == true)
+ {
+ 
+    
+   $uname = $_REQUEST["email"];
+   
+   $pswd = $_REQUEST["pass"];
+   
+   if (empty($uname) || empty($pswd)) {
+	$error =   "Username or Password is invalid";
+   }
+   else{
+       
+	   $sql =  "SELECT * FROM person where email='$uname' and Password='$pswd';" ;
+		
+	   $query = run($sql);
+	   
+	  
+        $count = 0;
+       $userid = "";
+       $type = "";
+       while($row = $query->fetch(PDO::FETCH_ASSOC))
+       {
+           $count++;
+           $userid = $row["id"];
+           $type = $row["type"];
+       }
+      
+          
+	   if($count > 0)
+	   {
+            echo "user name valid";
+		    //$_SESSION['username']=$uname;
+            $_SESSION['user'] = $userid;
+            //$_SESSION['type'] = $type;
+           // echo $_SESSION['userid'];
+		    header('Location:home/home.php');
+	   }
+	   else {
+		 $error = "Invalid User Name/Password";
+	   }
+   }//end of else
+   
+ }//end of if(isset
+
+?>
+
+<html>
     <head>        
        
         <link rel="stylesheet" type="text/css" href="css/main_page_css/headr.css">
@@ -170,13 +221,16 @@ $(document).ready(function() {
                                 <a id="logo" href="home/home.html">PUCIT Portal</a>
                                 
                               <ul class="inline">
-                                  <form> <li> <input type="email" name="email" maxlength = "25" placeholder = "Email ID " size = "25" required autofocus></li>
+                                  <form method="post"> <li> <input type="email" name="email" maxlength = "25" placeholder = "Email ID " size = "25" required autofocus>   </li>
+                                     
                                     <li><input type="password" name="pass" placeholder = "Enter Your Password" maxlength = "25" size = "25" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title = "Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)
 
 " required autofocus></li>
                                     <li> <button type="submit" value = "Submit" name = "submit" >LOG IN</button></li>
-                                    
+                                       <li> <span style="color:red"><?php echo $error ?></span></li>
+                                     
                                   </form></ul> 
+                                   
                                 <div id="usr_img"><img class="user_logo_img" src="images/PUCIT1.png"></div>
                             </div>
                         </div>
@@ -252,7 +306,7 @@ $(document).ready(function() {
           
             <div class ="search">
                 
-                <form > 
+                <form method ="post" action="mp1.php"> 
                     <table cellpadding="0px" cellspacing="0px"> 
                         <tr> 
                             <td style="border-style:solid none solid solid;border-                                  color:#4B7B9F;border-width:1px;">
@@ -289,3 +343,8 @@ $(document).ready(function() {
         </div>
      </body>
 </html> 
+
+
+
+  
+ 
