@@ -3,9 +3,18 @@
 <?php
 
 session_start();
- $_SESSION["user"]= "true";
 
-$query = run("select studentId from student where classId = 1;"); 
+if( $_SESSION['user'] == null)
+{
+    
+     header('Location: ../mp1.php');
+}
+ $userid = $_SESSION['user'];
+$quuer = run("select classId from student where studentId = '$userid' ");
+while($roow = $quuer->fetch(PDO::FETCH_ASSOC))
+{
+ $classid = $roow['classId'];
+ $query = run("select studentId from student where classId = '$classid' ;"); 
 
  while ($row = $query->fetch(PDO::FETCH_ASSOC))
  {
@@ -27,7 +36,7 @@ $query = run("select studentId from student where classId = 1;");
    
  
  }
-
+}
 		$output["data"] = $output;
       
 	echo json_encode($output);

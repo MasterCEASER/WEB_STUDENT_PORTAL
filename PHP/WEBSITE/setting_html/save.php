@@ -1,8 +1,19 @@
-<?php include('connect.php'); 
+<?php
+
 session_start();
 
+if( $_SESSION['user'] == null)
+{
+    
+     header('Location: ../mp1.php');
+}
+?>
+
+<?php include('connect.php'); 
 
 
+
+$user = $_SESSION['user'];
 
  
     
@@ -14,7 +25,7 @@ session_start();
     
    
        
-	  $qur = "update person set fname = '$fname' , lname = '$lname' , email = '$email' , Password = '$pass' , intro = '$intro' where id = 1 ";
+	  $qur = "update person set fname = '$fname' , lname = '$lname' , email = '$email' , Password = '$pass' , intro = '$intro' where id = '$user' ";
 		
 	   $query = run($qur);
 	   

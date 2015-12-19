@@ -1,3 +1,8 @@
+<?php
+session_start();
+$user = $_SESSION['user'];
+echo "<input type = 'text' id = 'id' value = '$user' >";
+?>
 <html>
     <head>
         <link href ="../css/main_page_css/headr.css" rel="stylesheet" type="text/css" />
@@ -8,13 +13,15 @@
         <script>
            $(document).ready(function(){
                
+               var id = $("#id").val();
+               $("#id").hide();
                var data = {"action": "getdata"};
 			
 			//object pass to $.ajax function to make an AJAX call.
 			var settings= {
 				type: "POST",
 				dataType: "json",
-				url: "getdata.php",
+				url: "getdata.php?id="+id+"",
 				data: data,
 				success: function(response) {
 					console.log('Recieved from server:');

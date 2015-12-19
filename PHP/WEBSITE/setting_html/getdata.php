@@ -1,14 +1,18 @@
- <?php include('connect.php'); ?>
+ 
+
+
+<?php include('connect.php'); 
+
+
+
+?>
 
 
 
 <?php
 
-session_start();
- $_SESSION["user"]= "true";
-
-$query = run("select * from person where id = 1"); 
-
+$user = $_GET['id'];
+$query = run("select * from person where id = '$user' "); 
 $output = array();
 $arr = array();
  while ($row = $query->fetch(PDO::FETCH_ASSOC))
