@@ -33,6 +33,7 @@
                     }
                     var inc = 1;
                     var checker = 0;
+                    var base = '../signup_HTML/img/';
                     while(k < len && inc <= 4 )
                     {
                         var row = response.data[k];
@@ -43,7 +44,16 @@
                             $("#hshow1 h2").html(""+row.name+"");
                             $("#show1").html(""+row.intro+"");
                              alert("1");
-                            $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");    
+                            $.get(base+row.img).done(function(){
+ $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+                                
+                                
+            
+                              
+  $(".ishow1").attr("src","../images/defaultUser.jpg");   
+});
+                             
                         }
                         else
                             if(inc == 2)
@@ -52,7 +62,11 @@
                                 $("#hshow2 h2").html(""+row.name+"");
                                 $("#show2").html(""+row.intro+"");
                                  alert(row.img);
-                                $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");    
+                                 $.get(base+row.img).done(function(){
+ $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow2").attr("src","../images/defaultUser.jpg");   
+}); 
 
                             }
                             else
@@ -61,7 +75,16 @@
                                     alert("3");
                                     $("#hshow3 h2").html(""+row.name+"");
                                     $("#show3").html(""+row.intro+"");
-                                    $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");    
+                                   $.get(base+row.img).done(function(){
+ $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+                                
+                                
+            
+                              
+  $(".ishow3").attr("src","../images/defaultUser.jpg");   
+});
+                             
 
                                 }
                                 else
@@ -70,7 +93,11 @@
                                         alert("4");
                                         $("#hshow4 h2").html(""+row.name+"");
                                         $("#show4").html(""+row.intro+"");
-                                        $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");    
+                                       $.get(base+row.img).done(function(){
+ $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow4").attr("src","../images/defaultUser.jpg");   
+}); 
     
                                     }
                                 k++;
@@ -98,14 +125,22 @@
                         {
                             $("#hshow1 h2").html(""+row.name+"");
                             $("#show1").html(""+row.intro+"");
-                            $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");    
+                             $.get(base+row.img).done(function(){
+ $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow1").attr("src","../images/defaultUser.jpg");   
+}); 
                         }
                         else
                             if(inc == 2)
                             {
                                 $("#hshow2 h2").html(""+row.name+"");
                                 $("#show2").html(""+row.intro+"");
-                                $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");    
+                               $.get(base+row.img).done(function(){
+ $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow2").attr("src","../images/defaultUser.jpg");   
+}); 
 
                             }
                             else
@@ -113,15 +148,22 @@
                                 {
                                     $("#hshow3 h2").html(""+row.name+"");
                                     $("#show3").html(""+row.intro+"");
-                                    $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");    
-
+                                  $.get(base+row.img).done(function(){
+ $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow3").attr("src","../images/defaultUser.jpg");   
+}); 
                                 }
                                 else
                                     if(inc == 4)
                                     {
                                         $("#hshow4 h2").html(""+row.name+"");
                                         $("#show4").html(""+row.intro+"");
-                                        $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");    
+                                     $.get(base+row.img).done(function(){
+ $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow4").attr("src","../images/defaultUser.jpg");   
+}); 
     
                                     }
                                 k++;
@@ -144,7 +186,11 @@
                         {
                             $("#hshow1 h2").html(""+row.name+"");
                             $("#show1").html(""+row.intro+"");
-                            $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");    
+                            $.get(base+row.img).done(function(){
+ $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow1").attr("src","../images/defaultUser.jpg");   
+}); 
                         }
                         else
                             if(inc == 2)
@@ -152,7 +198,11 @@
                                 $("#hshow2 h2").html(""+row.name+"");
                                 $("#show2").html(""+row.intro+"");
                                
-                                $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");    
+                               $.get(base+row.img).done(function(){
+ $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow2").attr("src","../images/defaultUser.jpg");   
+}); 
 
                             }
                             else
@@ -160,7 +210,11 @@
                                 {
                                     $("#hshow3 h2").html(""+row.name+"");
                                     $("#show3").html(""+row.intro+"");
-                                    $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");    
+                                   $.get(base+row.img).done(function(){
+ $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow3").attr("src","../images/defaultUser.jpg");   
+}); 
 
                                 }
                                 else
@@ -168,8 +222,11 @@
                                     {
                                         $("#hshow4 h2").html(""+row.name+"");
                                         $("#show4").html(""+row.intro+"");
-                                        $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");    
-    
+                                      $.get(base+row.img).done(function(){
+ $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");   
+}).fail(function(){
+  $(".ishow4").attr("src","../images/defaultUser.jpg");   
+}); 
                                     }
                                 k++;
                                 inc++;
@@ -301,7 +358,7 @@
                 <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
                 <div style="margin-left: 15px;">
                     <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow1" width="110" height="150" src="../images/shuja.png">
+                            <img class = "ishow1" width="110" height="150" src="../images/defaultUser.jpg">
                     </div>
                     
                     <div  style="display:table-cell;vertical-align: top;">
@@ -315,7 +372,7 @@
                 <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
                 <div style="margin-left: 15px;">
                     <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow2"  width="110" height="150" src="../images/shuja.png">
+                            <img class = "ishow2"  width="110" height="150" src="../images/defaultUser.jpg">
                     </div>
                     <div  style="display:table-cell;vertical-align: top;">
                         <h3>INTRODUCTION: </h3>
@@ -327,7 +384,7 @@
                 <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
                 <div style="margin-left: 15px;">
                     <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow3" width="110" height="150" src="../images/shuja.png">
+                            <img class = "ishow3" width="110" height="150" src="../images/defaultUser.jpg">
                     </div>
                     <div  style="display:table-cell;vertical-align: top;">
                         <h3>INTRODUCTION: </h3>
@@ -339,7 +396,7 @@
                 <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
                 <div style="margin-left: 15px;">
                     <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow4" width="110" height="150" src="../images/shuja.png">
+                            <img class = "ishow4" width="110" height="150" src="../images/defaultUser.jpg">
                     </div>
                     <div  style="display:table-cell;vertical-align: top;">
                         <h3>INTRODUCTION: </h3>
