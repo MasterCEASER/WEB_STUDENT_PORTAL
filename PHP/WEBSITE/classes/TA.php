@@ -1,7 +1,6 @@
 <?php
     include('../connect/prac.php');
     session_start();
-    $_SESSION['user']=2;
 ?>       
 <html>
 <head>    

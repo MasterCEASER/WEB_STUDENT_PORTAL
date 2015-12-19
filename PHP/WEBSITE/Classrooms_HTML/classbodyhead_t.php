@@ -2,7 +2,7 @@
         
         <div id="class-announcements-page">
             <div id="class-announcements-content">
-                <h2>Class : <i>
+                <h2 style="min-width: 70%;display: inline-block;">Class : <i>
                     <?php
                     
         $sql = 'select c.courseName,c1.image from courses c,classes c1 where c.courseId = c1.courseId and classId ='.$_REQUEST['class'];
@@ -16,11 +16,19 @@
                     }
                     ?>
                     </i></h2>
-                
+                <style>
+                    .ta__cl{
+                        float: none;
+                        display: inline;background-color: #3a3a3a;color: gainsboro;padding: 10px;
+                        border: 0;
+                        margin-right: 0;
+                    }
+                </style>
+                <?php include('classTA.php') ?>
                 <div id="sub-content">
                     <div id="class-announcements-sidebar" class="sub_child_content" style="border: 0px solid black;">
                         <div id="class-logo-announcements-content">
-                            <img class=""  src=<?php echo $img; ?> alt="Image Not Found...." >
+                            <img src=<?php echo $img; ?> alt="Image Not Found...." >
                         </div>
                         <hr/>
                         <script>

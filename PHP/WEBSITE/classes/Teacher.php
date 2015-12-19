@@ -67,10 +67,14 @@
         else
         {
             if(empty($file_n) == false){
-                $file_n= round(microtime(true)).".jpg";
-                move_uploaded_file($_FILES["img"]["tmp_name"], "image//".$file_n);
+                $file_n= round(microtime(true));
+                move_uploaded_file($_FILES["img"]["tmp_name"], "..//image//".$file_n);
             }
             $sqla="insert into classes(teacherId,courseId,description,courseOutline,image) values($b,$name1,'$des','$outline','image/$file_n')";
+            $result = mysqli_query($conn,$sqla);
+            $sqla="insert into teacher(teacherId,classId) values($b,(Select classId from classes where teacherId = $b and courseId = $name1))";
+            $result = mysqli_query($conn,$sqla);
+            
         }
     }
     ?>
@@ -103,9 +107,10 @@
                             {
                                 while($row=mysqli_fetch_assoc($result))
                                 {
+                            $row['image'] = '../'.$row['image'];
                                     if((empty($row['image']) == true) || (file_exists($row['image']) == false))
                                     {
-                                        $row['image'] = 'image/default.jpg';
+                                        $row['image'] = '../image/default.jpg';
                                     }
                                     echo    '<div class="class_table">
                                         <div style="display:table-cell;">

@@ -4,11 +4,10 @@ session_start();
 ?>
 
 <?php
-  
-  
-  if (isset($_POST["action"]) && !empty($_POST["action"])) 
+
+  if (isset($_REQUEST["action"]) && !empty($_REQUEST["action"])) 
   { 
-    $action = $_POST["action"];
+    $action = $_REQUEST["action"];
 	
     if($action == "updateDesc")
 	{
@@ -30,6 +29,43 @@ session_start();
         $sql = "update classes set courseOutline = '$out' where classId = ".$cid." ;";
         $row = $db->query($sql);
         
+		$output["data"] = $sql;
+		echo json_encode($output);
+	}
+	else if($action == "viewTA")
+	{
+        $c = $_REQUEST['c'];  
+        
+        $sql = "select ta.studentId,p.fname,p.lname,p.userImg from ta,person p where p.id = ta.studentId and classId = $c;";
+        $res = $db->query($sql);
+        $row = $res->fetchAll(PDO::FETCH_NUM);
+		$output["data"] = $row;
+		echo json_encode($output);
+	}
+	else if($action == "removeTA")
+	{
+        $c = $_REQUEST['c'];  
+        $id = $_REQUEST['rid'];
+        $sql = "delete from ta where studentId = $id and classId = $c";
+        $res = $db->query($sql);
+		$output["data"] = $sql;
+		echo json_encode($output);
+	}
+	else if($action == "TA_selection")
+	{
+        $c = $_REQUEST['c'];  
+        $sql = "select distinct id,fname,lname,userImg from person where id not in (select studentId from student where classId = $c) and id not in (select studentId from ta where classId = $c) and type = 0;";
+        $res = $db->query($sql);
+        $row = $res->fetchAll(PDO::FETCH_NUM);
+		$output["data"] = $row;
+		echo json_encode($output);
+	}
+	else if($action == "add_TA")
+	{
+        $c = $_REQUEST['c'];  
+        $t = $_REQUEST['t'];
+        $sql = "insert into ta (studentId,classId) values ($t,$c)";
+        $res = $db->query($sql);
 		$output["data"] = $sql;
 		echo json_encode($output);
 	}

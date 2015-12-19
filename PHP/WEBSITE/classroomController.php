@@ -1,6 +1,5 @@
 <?php
     session_start();
-$_SESSION['user'] = 2;
     if(isset($_SESSION['user'])==true){
         if(isset($_REQUEST['class'])==true && isset($_REQUEST['type'])==true){
             $c = $_REQUEST['class'];

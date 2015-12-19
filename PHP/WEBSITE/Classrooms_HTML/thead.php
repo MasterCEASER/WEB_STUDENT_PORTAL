@@ -10,3 +10,6 @@ $u = $_SESSION['user'];
         <script src="../js/jquery-2.1.4.min.js"></script>
     </head>
     <body>
+<?php
+  //  echo "<script>alert($u)</script>";
+?>

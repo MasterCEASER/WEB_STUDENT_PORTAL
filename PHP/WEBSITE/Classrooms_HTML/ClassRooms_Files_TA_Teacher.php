@@ -55,40 +55,6 @@ if(isset($_REQUEST["Upload"]) == true){
                 </div>
             </div>
         </div>
-        <style>
-            .overlay
-        {
-            position: fixed;
-            display: none;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            z-index: 101;
-            background-color: #000000;
-            opacity: .15;
-            filter: alpha(opacity=15);
-            -moz-opacity: .15;
-        }
-        .web_dialog
-        {
-            left: 45%;
-            top: 35%;
-            width: 500px;
-            height: 300px;
-            background-color: White;
-            border-color: Black;            
-            border: 2px solid black;
-            box-shadow: 5px 5px 8px 6px gray;
-            z-index: 102;
-            display: none;
-            position: fixed;
-            margin-left: -100px;
-            margin-top: -100px;
-        }
-        </style>
         <script>
             
         $(document).ready(function(){
@@ -113,7 +79,7 @@ if(isset($_REQUEST["Upload"]) == true){
         <div id="divoverlay" class="overlay"></div>
         <div id="modal_dialog" class="web_dialog">
             <div><form method="post" enctype="multipart/form-data">
-                <h3 style="padding: 4px;text-shadow: 3px 3px 4px grey;box-shadow: 2px 2px 2px 2px;display: inline;position: relative;left: 163px;top: 15px;">UPLOAD NEW FILE</h3>
+                <h3 class="dialog_header">UPLOAD NEW FILE</h3>
                 <input type="file" id="file" name="file" class="btnClass" style="padding: 5px;margin-bottom: 50px;margin-top: 40px;"><br>
                                     <input type="hidden" name="class" value=<?php echo $c ?>>
                 <input type="submit" name="Upload" id="upload" disabled value="Upload" style="float:left;margin-left: 125px;" class="btnClass">
