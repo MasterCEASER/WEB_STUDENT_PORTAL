@@ -4,7 +4,7 @@
 ?>
 <html>
 <head>    
-    <link rel="stylesheet" type="text/css" href="newclass.css">        
+    <link rel="stylesheet" type="text/css" href="../css/newclass.css">              
     <link rel="stylesheet" type="text/css" href="../css/headr.css">
     <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
     <script src="../js/jquery-2.1.4.min.js"></script>

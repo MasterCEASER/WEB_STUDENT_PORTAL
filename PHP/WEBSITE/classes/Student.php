@@ -4,7 +4,7 @@
 ?>       
 <html>
 <head>    
-    <link rel="stylesheet" type="text/css" href="newclass.css">        
+    <link rel="stylesheet" type="text/css" href="../css/newclass.css">              
     <link rel="stylesheet" type="text/css" href="../css/headr.css">
     <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
     <script src="../js/jquery-2.1.4.min.js"></script>
@@ -38,9 +38,10 @@
                     {
                         while($row=mysqli_fetch_assoc($result))
                         {
+                            $row['image'] = '../'.$row['image'];
                             if((empty($row['image']) == true) || (file_exists($row['image']) == false))
                             {
-                                $row['image'] = 'image/default.jpg';
+                                $row['image'] = '../image/default.jpg';
                             }
                             echo    '<div class="class_table">
                                         <div style="display:table-cell;">
