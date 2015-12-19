@@ -1,5 +1,5 @@
 <?php
-include('connectPDO.php');
+include('../connect/connectPDO.php');
 session_start();
 $u = $_SESSION['user'];
 ?>
