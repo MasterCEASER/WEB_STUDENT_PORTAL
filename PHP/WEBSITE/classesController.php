@@ -2,7 +2,7 @@
 
     include('connect/prac.php');
     session_start();
-$_SESSION['user'] = 2;
+$_SESSION['user'] = 1;
     if(isset($_SESSION['user'])==true){
         
                     $aa = $_SESSION["user"];

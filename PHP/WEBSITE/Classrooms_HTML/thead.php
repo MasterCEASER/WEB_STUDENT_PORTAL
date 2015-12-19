@@ -1,5 +1,5 @@
 <?php
-include('connectPDO.php');
+include('../connect/connectPDO.php');
 session_start();
 $u = $_SESSION['user'];
 ?>
@@ -10,3 +10,6 @@ $u = $_SESSION['user'];
         <script src="../js/jquery-2.1.4.min.js"></script>
     </head>
     <body>
+<?php
+  //  echo "<script>alert($u)</script>";
+?>

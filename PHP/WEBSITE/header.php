@@ -5,7 +5,7 @@
                     <div class="main_menu ">
                         <div class="nav-bar ">
                             <div class="container ">
-                                <div><img class="img-thumbnail img-circle web_logo_img logo" alt="Image Ot.Found.." src="../images/PUCIT1.png"></div>
+                                <div><img class="img-thumbnail img-circle web_logo_img logo" alt="Image Ot.Found.." src="../image/PUCIT1.png"></div>
                                 <a id="logo" href="index.html">pucit portal</a>
                                 <ul>
                                     <div style="display:table">
@@ -34,7 +34,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="../Classrooms_HTML/contact/contactUs.html" >
+                                            <a href="/PHP_PRO/PHP/WEBSITE/contact/contactUs.php" >
                                                 <i class="fa fa-phone"></i>
                                                 Contact
                                             </a>
@@ -46,7 +46,7 @@
                                     <li><a href="#" class="active">Contact</a></li>-->
                                 </ul>
                                 <div id="usr_img">
-                                    <img class="user_logo_img" id="user-profile-img" alt="Image NOt FOund ..." src="../images/shuja.png">
+                                    <img class="user_logo_img" id="user-profile-img" alt="Image NOt FOund ..." src="../image/shuja.png">
                                     <div style="width:35px;">
                                         <div class="layer close" id="user-profile" style="">
                                             <ul>

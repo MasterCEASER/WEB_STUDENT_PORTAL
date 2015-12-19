@@ -1,10 +1,11 @@
 <?php
     include('../connect/prac.php');
     session_start();
+    $_SESSION['user']=2;
 ?>
 <html>
 <head>    
-    <link rel="stylesheet" type="text/css" href="../css/newclass.css">              
+    <link rel="stylesheet" type="text/css" href="../css/newclass.css">        
     <link rel="stylesheet" type="text/css" href="../css/headr.css">
     <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
     <script src="../js/jquery-2.1.4.min.js"></script>
@@ -67,30 +68,13 @@
         else
         {
             if(empty($file_n) == false){
-                $file_n= round(microtime(true));
-                move_uploaded_file($_FILES["img"]["tmp_name"], "..//image//".$file_n);
+                $file_n= round(microtime(true)).".jpg";
+                move_uploaded_file($_FILES["img"]["tmp_name"], "image//".$file_n);
             }
             $sqla="insert into classes(teacherId,courseId,description,courseOutline,image) values($b,$name1,'$des','$outline','image/$file_n')";
-            $result = mysqli_query($conn,$sqla);
-            $sqla="insert into teacher(teacherId,classId) values($b,(Select classId from classes where teacherId = $b and courseId = $name1))";
-            $result = mysqli_query($conn,$sqla);
-            
         }
     }
     ?>
-     <?php
-            $aa = $_SESSION['user'];
-            if(isset ($_REQUEST["btnDel"])==true)
-            {
-                $a= $_REQUEST["Id"];
-                $i= $_REQUEST["image"];
-                if(($i != '../image/default.jpg') && file_exists($i)){
-                    unlink($i);
-                }
-                $sql="Delete from classes where classId='$a'";
-                mysqli_query($conn,$sql);
-            }
-        ?>
 </head>
     <body>
         <?php include('../header.php'); ?> 
@@ -120,31 +104,30 @@
                             {
                                 while($row=mysqli_fetch_assoc($result))
                                 {
-                            $row['image'] = '../'.$row['image'];
                                     if((empty($row['image']) == true) || (file_exists($row['image']) == false))
                                     {
-                                        $row['image'] = '../image/default.jpg';
+                                        $row['image'] = 'image/default.jpg';
                                     }
                                     echo    '<div class="class_table">
                                         <div style="display:table-cell;">
                                             <img class="class_img" src="'.$row['image'].'">
                                         </div>
                                         <div style="display:table-cell;vertical-align:middle;padding-left: 60px;">  
-                                            <a href="../classroomController.php?type=1&class='.$row['classId'].'">
-                                                <h2 style="text-align: center;">'.$row['courseName'].'</h2>                            
+                                            <a>
+                                                <h2 style="text-align: center;">'.$row['courseName'].'</h2>                                
                                             </a>
                                             <ul>
                                                 <li>Course-Code : '.$row['courseId'].'</li>
                                                 <li>Credit_Hrs : '.$row['credits'].'</li>
                                                 <li>Enrolled-Students : 50</li>
                                             </ul>
-                                            <br>'.$row['classId'].'
-                                            <form method="POST">
-                                                <input type="hidden" name="Id" value="'.$row['classId'].'">
-                                                <input type="hidden" name="image" value="'.$row['image'].'">
-                                                <input type="submit" name="btnDel" id="del" value="Delete">
-                                            </form>
-                                            </div>
+                                        <br>
+                                        <form method="POST">
+                                            <input type="hidden" name="Id" value="'.$row['classId'].'">
+                                            <input type="hidden" name="image" value="'.$row['image'].'">
+                                            <input type="submit" name="btnDel" id="del" value="Delete">
+                                        </form>
+                                        </div>
                                     </div>';
                                 }
                             }
@@ -184,5 +167,38 @@
                 </div>
             </form>
         </div>
+         <script src="jquery-1.9.1.min.js" ></script>
+    <script>
+        
+        $("document").ready(function(){
+             $("#del").each(function(){
+                  
+                    $(this).click(function(){
+                        $(this).closest("div").remove();
+                    });
+             });
+           
+            });
+          
+    </script>
+    <?php 
+echo"123";
+$aa = $_SESSION['user'];
+    if(isset ($_REQUEST["btnDel"])==true)
+        {
+        
+            $a= $_REQUEST["Id"];
+            $i= "image/".$_REQUEST["image"];
+            echo $a;
+        if(file_exists($i)){
+            unlink($i);
+        }
+            $sql="delete from classes where classId='$aa'";
+            mysqli_query($conn,$sql);
+       
+        }
+    
+    
+    ?>
     </body>
 </html>
