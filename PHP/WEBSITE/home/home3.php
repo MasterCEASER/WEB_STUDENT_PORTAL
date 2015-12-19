@@ -3,9 +3,19 @@
 <?php
 
 session_start();
- $_SESSION["user"]= "true";
+ if( $_SESSION['user'] == null)
+{
+    
+     header('Location: ../mp1.php');
+}
 
-$query = run("select subject,teacherId from announcemnet where classId = 1 and global = False ORDER BY time desc;"); 
+$userid = $_SESSION['user'];
+$quuer = run("select classId from student where studentId = '$userid' ");
+
+while($roow = $quuer->fetch(PDO::FETCH_ASSOC))
+{
+ $classid = $roow['classId'];
+$query = run("select subject,teacherId from announcemnet where classId = '$classid' and global = False ORDER BY time desc;"); 
 
  while ($row = $query->fetch(PDO::FETCH_ASSOC))
  {
@@ -22,11 +32,11 @@ $query = run("select subject,teacherId from announcemnet where classId = 1 and g
    
    
  
- }
-
-		$output["data"] = $output;
+  }
+}
+ $output["data"] = $output;
       
 	echo json_encode($output);
-		
+
     
 ?>

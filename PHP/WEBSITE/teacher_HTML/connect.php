@@ -1,13 +1,4 @@
-<?php
-
-session_start();
-
-if( $_SESSION['user'] == null)
-{
-    
-     header('Location: ../mp1.php');
-}
-?> 
+ 
 
 <?php 
  function connect()

@@ -3,9 +3,14 @@
 <?php
 
 session_start();
- $_SESSION["user"]= "true";
 
-$query = run("select subject,teacherId from announcemnet where classId = 1 and global = True ORDER BY time desc;"); 
+if( $_SESSION['user'] == null)
+{
+    
+     header('Location: ../mp1.php');
+}
+
+$query = run("select subject,teacherId from announcemnet where   global = True ORDER BY time desc;"); 
 
 $output = array();
  while ($row = $query->fetch(PDO::FETCH_ASSOC))
