@@ -78,6 +78,19 @@
         }
     }
     ?>
+     <?php
+            $aa = $_SESSION['user'];
+            if(isset ($_REQUEST["btnDel"])==true)
+            {
+                $a= $_REQUEST["Id"];
+                $i= $_REQUEST["image"];
+                if(($i != '../image/default.jpg') && file_exists($i)){
+                    unlink($i);
+                }
+                $sql="Delete from classes where classId='$a'";
+                mysqli_query($conn,$sql);
+            }
+        ?>
 </head>
     <body>
         <?php include('../header.php'); ?> 
@@ -118,14 +131,20 @@
                                         </div>
                                         <div style="display:table-cell;vertical-align:middle;padding-left: 60px;">  
                                             <a href="../classroomController.php?type=1&class='.$row['classId'].'">
-                                                <h2 style="text-align: center;">'.$row['courseName'].'</h2>                                
+                                                <h2 style="text-align: center;">'.$row['courseName'].'</h2>                            
                                             </a>
                                             <ul>
                                                 <li>Course-Code : '.$row['courseId'].'</li>
                                                 <li>Credit_Hrs : '.$row['credits'].'</li>
                                                 <li>Enrolled-Students : 50</li>
                                             </ul>
-                                        </div>
+                                            <br>'.$row['classId'].'
+                                            <form method="POST">
+                                                <input type="hidden" name="Id" value="'.$row['classId'].'">
+                                                <input type="hidden" name="image" value="'.$row['image'].'">
+                                                <input type="submit" name="btnDel" id="del" value="Delete">
+                                            </form>
+                                            </div>
                                     </div>';
                                 }
                             }
