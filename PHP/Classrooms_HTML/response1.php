@@ -117,6 +117,15 @@ session_start();
 		$output["data"] = $sql;
 		echo json_encode($output);
 	}
+	else if($action == "add_TA")
+	{
+        $c = $_REQUEST['c'];  
+        $t = $_REQUEST['t'];
+        $sql = "insert into ta (studentId,classId) values ($t,$c)";
+        $res = $db->query($sql);
+		$output["data"] = $sql;
+		echo json_encode($output);
+	}
   }//end of if
   
 
