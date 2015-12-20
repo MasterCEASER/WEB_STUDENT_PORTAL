@@ -236,7 +236,9 @@ $(document).ready(function() {
 
        });
     $(".simply-scroll-clip").css("height", "100%");
-    alert(<?php echo '"'.$error.'"'; ?>);
+    if($error != ""){
+    <?php echo 'alert("'.$error.'");'; ?>
+    }
 });
 </script>
 
