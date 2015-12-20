@@ -50,13 +50,13 @@ include('connect.php');
 	$temp = explode(".", $_FILES["fileToUpload"]["name"]);
 	
 	//Create a unique name by using time and append the actual extension
-	$new_name = round(microtime(true)) . '.' . end($temp);
+	$new_name = round(microtime(true));
 	
 	//save file into "img" folder with the name stored '$new_name' variable
-	move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "img//".$new_name);
+	move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "..//image//".$new_name);
 
 	//store image name in database
-                
+               $new_name = 'image/'.$new_name;
             $sql = "INSERT INTO person (lname,fname,email,Password,birthdate,type,userimg,intro,sex)
 			VALUES ('$lname','$fname', '$email', '$pass','$birthday','$identity','$new_name','$intro','$sex')";
 		
@@ -77,11 +77,12 @@ include('connect.php');
 					$results['userid'] = $row['id'];
 				}
 			} 
+            $name = $fname . ' ' . $lname;
             $_SESSION['user'] = $results['userid'];
             $_SESSION['email'] = $email;
             $_SESSION['type'] = $_POST['criteria'];
           echo "email is ".$_SESSION['email'];  
-          header('Location: thanks.php');
+          header('Location: thanks.php?name='.$name.'&img='.$new_name);
 			echo"query saved";
 		} else {
 			echo "Error: ". mysqli_error($conn);

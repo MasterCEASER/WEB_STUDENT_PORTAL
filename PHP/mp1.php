@@ -2,6 +2,11 @@
 session_start();
  $error = "";
 
+?>
+<?php
+if(isset($_SESSION['user'])==true){
+    header("Location:home/home.php");
+}
 if(isset($_REQUEST["submit"]) == true)
  {
  
@@ -23,9 +28,12 @@ if(isset($_REQUEST["submit"]) == true)
         $count = 0;
        $userid = "";
        $type = "";
+       
        while($row = $query->fetch(PDO::FETCH_ASSOC))
        {
            $count++;
+            $name = $row["fname"].' '.$row["lname"];     
+           $img = $row['userImg'];
            $userid = $row["id"];
            $type = $row["type"];
        }
@@ -37,8 +45,11 @@ if(isset($_REQUEST["submit"]) == true)
 		    //$_SESSION['username']=$uname;
             $_SESSION['user'] = $userid;
             //$_SESSION['type'] = $type;
+           if(!file_exists($img)){
+               $img = "";
+           }
            // echo $_SESSION['userid'];
-		    header('Location:home/home.php');
+		    header('Location:home/home.php?name='.$name.'&img='.$img);
 	   }
 	   else {
 		 $error = "Invalid User Name/Password";
@@ -52,7 +63,7 @@ if(isset($_REQUEST["submit"]) == true)
 <html>
     <head>        
        
-        <link rel="stylesheet" type="text/css" href="css/main_page_css/headr.css">
+        <link rel="stylesheet" type="text/css" href="css/headr.css">
         <link rel="stylesheet" type="text/css" href="css/main_page_css/footer.css">
         
         
@@ -74,7 +85,21 @@ if(isset($_REQUEST["submit"]) == true)
 </script>
         
       <style>
-                #signup{height:50px; width:200px; border-radius: 15px; box-shadow: 4px 3px;font-style: oblique;color: blue}
+          #Header #container .main_menu .container > ul li {border: 0;}
+#signup{
+    color: blue;
+    font-size: 35px;
+    z-index: +4;
+    padding: 14px;
+    text-shadow: 2px 3px 5px black;
+    position: relative;
+    left: 45%;
+    top: -26px;
+    background-image: url(image/bg.png);
+    border: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
 a:link {color:blue;}    
 ul a:visited {color:lightgray;} 
 a:hover {color:blue;} 
@@ -146,6 +171,10 @@ span.text-content {
   -o-transition: opacity 500ms;
   transition: opacity 500ms;
 }
+          
+.btnClass{
+        font-size: 15px;box-shadow: 4px 3px 5px 1px grey;
+    }
 </style>
 
 <script>
@@ -206,6 +235,7 @@ $(document).ready(function() {
         $("#my-div").html("This is the Computer lab of Allama Iqbal Old campus.");
 
        });
+    $(".simply-scroll-clip").css("height", "100%");
 });
 </script>
 
@@ -218,16 +248,17 @@ $(document).ready(function() {
                         <div class="nav-bar inline">
                             <div class="container inline">
                                 <div><img class="img-thumbnail img-circle web_logo_img logo" src="images/PUCIT1.png"></div>
-                                <a id="logo" href="home/home.php">PUCIT Portal</a>
+                                <a id="logo" href="home/home.php">PUCIT PORTAL</a>
                                 
                               <ul class="inline">
-                                  <form method="post"> <li> <input type="email" name="email" maxlength = "25" placeholder = "Email ID " size = "25" required autofocus>   </li>
+                                  <form method="post"> <li> <input class="btnClass" type="email" name="email" maxlength = "25" placeholder = "Email ID " size = "25" required autofocus>   </li>
                                      
-                                    <li><input type="password" name="pass" placeholder = "Enter Your Password" maxlength = "25" size = "25" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title = "Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)
+                                    <li><input class="btnClass" type="password" name="pass" placeholder = "Enter Your Password" maxlength = "25" size = "25" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title = "Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)
 
 " required autofocus></li>
-                                    <li> <button type="submit" value = "Submit" name = "submit" >LOG IN</button></li>
-                                       <li> <span style="color:red"><?php echo $error ?></span></li>
+                                    <li> 
+                                        <button class="btnClass" type="submit" value="submit" name="submit" style="color: blue;font-weight: bold;font-family: monospace;text-shadow: 2px 2px 8px grey;font-size: 18px;">LOG IN</button></li>
+                                       <li> <span style="color:red;position: absolute;right: 35%;top: 17%;"><?php echo $error ?></span></li>
                                      
                                   </form></ul> 
                                    
@@ -242,57 +273,61 @@ $(document).ready(function() {
     
 
     
-        <br><br>  <a href = "signup_HTML/"><button id = "signup"><b>SIGN UP</b></button> </a>
-<ul class="img-list">
+        <br><br>  <a href = "signup_HTML/signup.php"><input type="button" class="btnClass" id = "signup" value="SIGN UP"></a>
+   <ul class="img-list">
   <li>
     <a href="#">
-      <img src="images/main_page_img/a.jpg" id="a" border=4px width="200" height="100" />
+      <img src="images/main_page_img/a.jpg" id="a" border="4px" width="200" height="100">
       <center><span class="text-content"><span>PUCIT-Allama Iqbal-Old Campus VC lawn</span></span></center>
     </a>
   </li>
  <li>
     <a href="#">
-      <img src="images/main_page_img/b.jpg" id="b" border=4px width="200" height="100" />
+      <img src="images/main_page_img/b.jpg" id="b" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT-Allama Iqbal Old Campus-Front view</span></span>
     </a>
   </li>
  <li>
     <a href="#">
-      <img src="images/main_page_img/c.jpg" id="c" border=4px width="200" height="100" />
+      <img src="images/main_page_img/c.jpg" id="c" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT-Quaid e Azam New Campus-Front view</span></span>
     </a>
   </li>
      <li>
     <a href="#">
-      <img src="images/main_page_img/d.jpg" id="d" border=4px width="200" height="100" />
-      <span class="text-content" ><span>PUCIT-Allama Iqbal Old Campus-Computer Lab</span></span>
+      <img src="images/main_page_img/d.jpg" id="d" border="4px" width="200" height="100" style="margin-top: 8px;">
+      <span class="text-content"><span>PUCIT-Allama Iqbal Old Campus-Computer Lab</span></span>
     </a>
   </li>
  <li>
     <a href="#">
-      <img src="images/main_page_img/e.jpg"id="e" border=4px width="200" height="100" />
+      <img src="images/main_page_img/e.jpg" id="e" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT-Allama Iqbal Old Campus-Library</span></span>
     </a>
   </li>
      <li>
     <a href="#">
-      <img src="images/main_page_img/f.jpg" id="f" border=4px  width="200" height="100" />
+      <img src="images/main_page_img/f.jpg" id="f" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT- Quaid e Azam New Campus-Computer lab</span></span>
     </a>
   </li>
 </ul>
-   
     <center><div id="ladiv"></div>
         <div class="div1" id="my-div"></div></center>
   
-        
+        <style>
+            ul#scroller > li > img{
+                width:290px; 
+                height:200px; 
+            }
+        </style>
         <ul id="scroller">
-    <li><img src="images/main_page_img/a.jpg" width="290" height="200" alt="Firehouse"></li>
-    <li><img src="images/main_page_img/b.jpg" width="290" height="200" alt="Chloe nightclub"></li>
-    <li><img src="images/main_page_img/c.jpg" width="290" height="200" alt="Firehouse bar"></li>
-    <li><img src="images/main_page_img/d.jpg" width="290" height="200" alt="Firehouse chloe club fishtank"></li>
-    <li><img src="images/main_page_img/e.jpg" width="290" height="200" alt="Firehouse restaurant"></li>
-    <li><img src="images/main_page_img/f.jpg" width="290" height="200" alt="Firehouse"></li>
+    <li><img src="images/main_page_img/a.jpg" alt="Firehouse"></li>
+    <li><img src="images/main_page_img/b.jpg" alt="Chloe nightclub"></li>
+    <li><img src="images/main_page_img/c.jpg" alt="Firehouse bar"></li>
+    <li><img src="images/main_page_img/d.jpg" alt="Firehouse chloe club fishtank"></li>
+    <li><img src="images/main_page_img/e.jpg" alt="Firehouse restaurant"></li>
+    <li><img src="images/main_page_img/f.jpg" alt="Firehouse"></li>
 </ul>
 
          <div id ="footer">
@@ -309,11 +344,11 @@ $(document).ready(function() {
                 <form method ="post" action="mp1.php"> 
                     <table cellpadding="0px" cellspacing="0px"> 
                         <tr> 
-                            <td style="border-style:solid none solid solid;border-                                  color:#4B7B9F;border-width:1px;">
-                            <input type="text" placeholder="Search here"                                         style="width:300px; border:0px solid; height:17px;                                      padding:0px 3px; position:relative;"> 
-                                </td>
-                            <td style="border-style:solid;border-                                                       color:#4B7B9F;border-width:1px;"> 
-                                        <input type="submit" value="" style="border-                                            style: none; background:                                                    url('images/main_page_img/searchbutton3.gif') no-repeat; width: 25px;                                    height: 20px;">
+                            <td style="border-style:solid none solid solid;border-color:#4B7B9F;border-width:1px;">
+                                <input type="text" placeholder="Search here" style="width:300px; border:0px solid; height:17px;padding:0px 3px; position:relative;"> 
+                            </td>
+                            <td style="border-style:solid;border- color:#4B7B9F;border-width:1px;"> 
+                                        <input type="submit" value="" style="border-style: none; background:url('images/main_page_img/searchbutton3.gif') no-repeat; width: 25px;height: 20px;">
                             </td>
                         </tr>
                     </table>
