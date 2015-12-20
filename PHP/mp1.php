@@ -236,6 +236,7 @@ $(document).ready(function() {
 
        });
     $(".simply-scroll-clip").css("height", "100%");
+    alert(<?php echo '"'.$error.'"'; ?>);
 });
 </script>
 
@@ -258,7 +259,7 @@ $(document).ready(function() {
 " required autofocus></li>
                                     <li> 
                                         <button class="btnClass" type="submit" value="submit" name="submit" style="color: blue;font-weight: bold;font-family: monospace;text-shadow: 2px 2px 8px grey;font-size: 18px;">LOG IN</button></li>
-                                       <li> <span style="color:red;position: absolute;right: 35%;top: 17%;"><?php echo $error ?></span></li>
+                                       <li> <span style="color:red;position: absolute;right: 35%;top: 17%;"></span></li>
                                      
                                   </form></ul> 
                                    
