@@ -5,8 +5,9 @@ echo "<input type = 'text' id = 'id' value = '$user' >";
 ?>
 <html>
     <head>
-        <link href ="../css/main_page_css/headr.css" rel="stylesheet" type="text/css" />
+        <link href ="../css/headr.css" rel="stylesheet" type="text/css" />
          <link href ="../css/settings_css/settings.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
         <script type="text/javascript" src="../jquery/main_page_jquery/jquery-2.1.4.min.js">
         </script>
         
@@ -41,7 +42,7 @@ echo "<input type = 'text' id = 'id' value = '$user' >";
                                     
 				},
 				error: function (err, type, httpStatus) {
-					alert('error has occured');
+					////alert('error has occured');
 				}
 			};
 			
@@ -49,10 +50,10 @@ echo "<input type = 'text' id = 'id' value = '$user' >";
 			console.log('request sent');
 					
                
-               alert("hello");
+               //alert("hello");
            $("#change").click(function(){
            
-               alert("btn clock");
+               //alert("btn clock");
             $("input").attr("readonly",false);
            
            
@@ -70,77 +71,7 @@ echo "<input type = 'text' id = 'id' value = '$user' >";
     
     
     <body>
-<!--
-
-        <div id="header">
-            <div class="logo">
-                <img src="shuja.png"> </img>
-            </div>
-            
-            <div class="headin">
-                <table > 
-                    <tr> 
-                        <td> 
-                            <span> PUCIT PORTAL </span> 
-                        </td>
-                    </tr> 
-                    
-                    <tr> 
-                        
-                        <td style="padding-left:25px;font-size:14px"> its a easy way to go 
-                        
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            
-            <div class = "bar">
-                <table>
-                    <tr>
-                        <td> Home </td>
-                        <td>  ClassRooms</td>
-                        <td> Teachers </td>
-                        <td> Posts </td>
-                        <td> Contact </td>
-                    </tr>    
-                </table>    
-            </div>
-            
-            <div class="user">
-                <img src="shuja.png"> </img>
-            </div>
-    
-            <div class ="TT">
-               <span> Contact Us</span>
-                <img src="HEADER-FOOTERS/wtsapp1.png"> </img>
-                <img src="HEADER-FOOTERS/file1.png"> </img>
-            </div>    
-        </div> 
--->
-
-        <div id="Header">
-            <div class="wrapper">
-                <div id="container">
-                    <div class="main_menu inline">
-                        <div class="nav-bar inline">
-                            <div class="container inline">
-                                <div><img class="img-thumbnail img-circle web_logo_img logo" src="../Images/PUCIT1.png"></div>
-                                <a id="logo" href="../home/home.html">pucit portal</a>
-                                <ul class="inline">
-                                    <li><a href="../home/home.html" class="active">Home</a></li>
-                                    <li><a href="../teacher_HTML/teacher-info.html" class="active">Teacher</a></li>
-                                    <li><a href="../Classrooms_HTML/classrommS/classroom_S.html" class="active">Class-Rooms</a></li>
-                                    <li><a href="../post_HTML/GLOBAL%20POST.html" class="active">Posts</a></li>
-                                    <li><a href="../Classrooms_HTML/contact/contactUs.html" class="active">Contact</a></li>
-                                    
-                                </ul>
-                                <div id="usr_img"><img class="user_logo_img" src="../images/shuja.png"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
+        <?php include('../header.php'); ?>
         <hr style="margin-top:20px;">
         <center>  <h1> Settings </h1> </center>
         <div class = "settings">

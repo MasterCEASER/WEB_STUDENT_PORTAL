@@ -2,11 +2,33 @@
         <?php
             include ('head.php');
             include ('../header.php');
-            include ('classbodyhead.php');
-        $u = $_SESSION['user'];
-        $c = $_SESSION['course'];
-        $t = $_SESSION['teacher'];
         ?>
+<div id="class-announcements-page">
+            <div id="class-announcements-content">
+                <h2> GLOBAL POSTS</h2>
+                <div id="sub-content">                    
+                <div id="class-announcements-sidebar" class="sub_child_content" style="">
+                <div id="class-logo-announcements-content">
+                    <img class="img-thumbnail "  src="../images/PUCIT1.png" alt="Image Not Found...." >
+                </div>
+                <hr/>
+                <div id="class-info-announcements-content" >
+                    <h3 class="active">Description:</h3>
+                    <div class="panel-info" id="description">
+                        An Emerging Computer Science Department By Punjab Univesity
+                        <h2> Offering Degrees </h2>
+                        <ul>
+                            <li> BSCS </li>
+                            <li> BSSE </li>
+                            <li> BSIT </li>
+                            <li> MCS </li>
+                            <li> M-Phil </li>
+                            <li> PHD </li>
+                        </ul>
+                            
+                    </div>
+                </div>
+            </div>
                     <div id="Posts" class="sub_main_content sub_child_content" >
                         <h3>Posts</h3>
                         <div id="new_post" class="new_post">
@@ -29,26 +51,26 @@
                         </div>
                         <div id="old_posts" class="post_wrapper">
                             <?php
-        $sql = 'select concat(fname," ",lname) as name,postDesc,files,postTime from post,person where postedBy=person.id  and global = 1 order by postTime desc;';
+        $sql = 'select concat(fname," ",lname) as name,postDesc,postTime from post,person where postedBy=person.id  and global = 1 order by postTime desc;';
         $res = $db->query($sql);
-        while($row = $res->fetch(PDO::FETCH_NUM))
+        while($row = $res->fetch(PDO::FETCH_ASSOC))
         {
                         echo    '<div class="post">
                                 <div class="post_header">
                                     <div class="post_img_div">
                                         <img class="img-thumbnail img-circle" src="../Images/PUCIT1.png" style="">
                                     </div>
-                                    <div class="posted_by">'.$row[0].'</div>
+                                    <div class="posted_by">'.$row['name'].'</div>
                                     <div id="date-time">
-                        <div class="time"> '.substr($row[3],strpos($row[3],' ')).' </div> <br> 
-                        <div class="date"> '.substr($row[3],0,strpos($row[3],' ')).' </div>
+                        <div class="time"> '.substr($row['postTime'],strpos($row['postTime'],' ')).' </div> <br> 
+                        <div class="date"> '.substr($row['postTime'],0,strpos($row['postTime'],' ')).' </div>
                                     </div>
                                 </div>
                                 <hr style="margin-left: 50;">
                                 <div class="post_data"> 
                                     <p class="post_data_content"> 
                                         <b>Posts: </b> 
-                                        <cite>'.$row[1].'
+                                        <cite>'.$row['postDesc'].'
                                         </cite>
                                     </p>
                                     <div id="post_comments">

@@ -17,15 +17,13 @@ $_SESSION['user'] = 1;
                         }elseif($t==0){
                             header("Location:classes/Student.php");                           
                         }else{
-                        /*header to login page.......*/                                        
+                            header("Location:mp1.php");
                         }
                     }else{
-                        /*header to login page.......*/            
+                            header("Location:mp1.php");            
                     }
     }else{
-        /*
-            header to login page.......
-        */
+                            header("Location:mp1.php");
     }
 
 

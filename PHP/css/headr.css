@@ -127,8 +127,12 @@ body{
     vertical-align: -webkit-baseline-middle;
     vertical-align: -moz-baseline-middle;
     vertical-align: -o-baseline-middle;
-    padding-right: 25%;
-    font-size: 24px;/*
+    padding-right: 14%;
+    font-size: 30px;
+    FONT-family: monospace;
+    color: blue;
+    text-shadow: 2px 3px 5px grey;
+    font-weight: bold;/*
     position: relative;
     bottom: 30px;
     margin-right: 28%;*/
@@ -149,6 +153,7 @@ body{
     right: 82;
     margin-top: 10%;
     text-align: left;
+    z-index: 100;
 }
 
 #user-profile > ul,

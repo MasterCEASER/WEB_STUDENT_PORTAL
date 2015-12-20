@@ -1,0 +1,14 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            localStorage.clear();
+        </script>
+    </body>
+</html>
+<?php 
+session_start();
+session_unset();
+header("Location:mp1.php");
+?>

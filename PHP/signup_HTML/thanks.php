@@ -59,6 +59,7 @@ if( $_SESSION['user'] == null)
     
     
     }
+             
     
     .thanks table{
      
@@ -83,7 +84,24 @@ if( $_SESSION['user'] == null)
     font-size:25px
 }
              h1{text-shadow: 5px 5px 10px grey;}
-             button{height:50px; font-size:25px; width:175px; border-radius: 15px; box-shadow: 2px 2px 8px 5px grey ;font-style: oblique;color: black}
+             button{
+               
+             }
+             button{
+    color: blue;
+    font-size: 35px;
+    z-index: +4;
+    padding: 14px;
+    text-shadow: 2px 3px 5px black;
+    position: relative;
+    left: 30%;
+    top: -42px;
+                 width: 500px;
+    background-image: url('../image/bg.png');
+    border: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
     
              .slide{
              
@@ -125,7 +143,7 @@ if( $_SESSION['user'] == null)
     
     
             
-    <br><br><br><a href="../home/home.php"><button><b> Next</b></button></a>
+    <br><br><br><a href=<?php echo '"../home/home.php?name='.$_REQUEST['name'].'&img='.$_REQUEST['img'].'"'; ?>><button><b> Next</b></button></a>
 
             <div class = "thanks">
      

@@ -138,7 +138,7 @@
                                                 <li>Credit_Hrs : '.$row['credits'].'</li>
                                                 <li>Enrolled-Students : 50</li>
                                             </ul>
-                                            <br>'.$row['classId'].'
+                                            <br>
                                             <form method="POST">
                                                 <input type="hidden" name="Id" value="'.$row['classId'].'">
                                                 <input type="hidden" name="image" value="'.$row['image'].'">

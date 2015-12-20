@@ -2,6 +2,13 @@
     $host = $_SERVER['REQUEST_URI'];
 $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
 ?>
+<script>
+    <?php if(isset($_REQUEST['name'])==true && isset($_REQUEST['img'])==true){
+        echo "localStorage['uname'] = '".$_REQUEST['name']."';"; 
+        echo "localStorage['img'] = '".$_REQUEST['img']."';";
+    }
+    ?>;
+</script>
         <div id="Header">
             <div class="wrapper">
                 <div id="container">
@@ -31,7 +38,7 @@ $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
                                             </a>
                                         </li>
                                         <li>
-                                            <a href=<?php echo '"'.$host.'____"' ?> >
+                                            <a href=<?php echo '"'.$host.'post_HTML/GLOBAL_POST.php"' ?> >
                                                 <i class="fa fa-envelope-o"></i>
                                                 Posts
                                             </a>
@@ -45,12 +52,12 @@ $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
                                     </div>
                                 </ul>
                                 <div id="usr_img">
-                                    <img class="user_logo_img" id="user-profile-img" alt="Image NOt FOund ..." src=<?php echo '"'.$host.'image/shuja.png"' ?>">
+                                    <img class="user_logo_img" id="user-profile-img" alt="Image NOt FOund ..." src=<?php echo '"'.$host.'image/defaultUser.jpg"' ?>>
                                     <div style="width:35px;">
                                         <div class="layer close" id="user-profile" style="">
                                             <ul>
                                                 <li class="clearfix">
-                                                    <a><i class="fa fa-user"></i>&nbsp; Hisham</a>
+                                                    <a><i class="fa fa-user"></i>&nbsp; </a>
                                                 </li>
                                                 <li class="clearfix">
                                                     <a><i class="fa fa-cog"></i>&nbsp; Settings</a>
@@ -61,6 +68,14 @@ $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
                                             </ul>
                                         </div>      <!--END OF USER DROPDOWN-->
                                         <script>
+                                            var img = localStorage['img'];
+                                            if(img != null && img != ""){
+                                                
+                                            var ui = $("#user-profile-img");
+                                                ui.attr("src",<?php echo '"'.$host.'"' ?> + img);
+                                            }
+                                            $("#user-profile-img");
+                                            $("#user-profile > ul > li:nth-child(1) a").append(" "+ localStorage['uname']);
                                             $("img#user-profile-img").click(function(){
                                                var x = $("div#user-profile"); 
                                                 if(x.hasClass("open")){
@@ -72,17 +87,17 @@ $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
                                                 }
                                             });
                                             $("div#user-profile > ul > li:nth-child(2)").click(function(){
-                                                alert("Settings");
                                                 var x = $("div#user-profile"); 
                                                 x.removeClass("open");
                                                 x.addClass("close");
+                        location.pathname = location.pathname.substr(0,location.pathname.indexOf('/PHP/')+5) + "setting_html/settings.php";
                                             })
                                             $("div#user-profile > ul > li:nth-child(3)").click(function(){
                                                 var x = $("div#user-profile"); 
                                                 x.removeClass("open");
                                                 x.addClass("close");
                                                 
-                        location.pathname = location.pathname.substr(0,location.pathname.lastIndexOf('/')+1) + "addjob.php";
+                        location.pathname = location.pathname.substr(0,location.pathname.indexOf('/PHP/')+5) + "signOut.php";
                                             })
                                         </script>
                                     </div>
