@@ -25,7 +25,7 @@ if( $_SESSION['user'] == null)
         <link rel="stylesheet" type="text/css" href="../css/main_page_css/footer.css">
         
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>jQuery simplyScroll - Logicbox</title>
+<title>Thanks</title>
 <script type="text/javascript" src="../jquery/main_page_jquery/jquery-2.1.4.min.js">
 </script>
 <!--<script type="text/javascript" src="/js/common.js"></script>-->
@@ -63,27 +63,27 @@ if( $_SESSION['user'] == null)
     .thanks table{
      
      
-      left:10%;
+      left:7%;
       position: absolute;
       font-family: sans-serif;
       font-size:25px;
     background-color: lightgray; 
         border-radius: 25px;
-      border:2px solid blue;
-        padding:10px 40px
+      border:2px solid black;
+        padding:8px 
     
     }
            table{
             font-family: sans-serif;
-      font-size:25px;
+      font-size:20px;
            
            
            }       
     .thanks input[type="text"] {
     font-size:25px
 }
-             h1{text-shadow: 5px 5px 5px blue;}
-             button{height:50px; width:200px; border-radius: 15px; box-shadow: 4px 3px;font-style: oblique;color: blue}
+             h1{text-shadow: 5px 5px 10px grey;}
+             button{height:50px; font-size:25px; width:175px; border-radius: 15px; box-shadow: 2px 2px 8px 5px grey ;font-style: oblique;color: black}
     
              .slide{
              
@@ -129,13 +129,13 @@ if( $_SESSION['user'] == null)
 
             <div class = "thanks">
      
-       <b><h1><center> &nbsp &nbsp &nbsp THANKS FOR SIGNING UP</center></h1></b>
+       <b><h1><center> &nbsp &nbsp &nbsp Thanks For Signing Up</center></h1></b>
      
-       <table cellpadding = 19 cellspacing = 10 >
+       <table cellpadding = 15 cellspacing = 8 >
         <tr> 
-          <td>Email ID: </td> <td><input type = "text" name = "uname" readonly size = "25" value= "<?php echo $email ?>"  </td> <br> </tr>
+          <td>Email ID: </td> <td><input type = "text" name = "uname" readonly size = "20" value= "<?php echo $email ?>"  </td> <br> </tr>
        
-         <tr><td>Your Identity: </td><td><input type = "text" name = "Signup" readonly  size = "25" value=" <?php echo $type ?> "</td></tr>
+         <tr><td>Your Identity: </td><td><input type = "text" name = "Signup" readonly  size = "20" value=" <?php echo $type ?> "</td></tr>
        </table>
     
     </div>
@@ -148,7 +148,7 @@ if( $_SESSION['user'] == null)
     <li><img src="../images/main_page_img/c.jpg" width="290" height="200" alt="Firehouse bar"></li>
     <li><img src="../images/main_page_img/d.jpg" width="290" height="200" alt="Firehouse chloe club fishtank"></li>
     <li><img src="../images/main_page_img/e.jpg" width="290" height="200" alt="Firehouse restaurant"></li>
-    <li><img src="../images/main_page_img/f.jpg"" width="290" height="200" alt="Firehouse"></li>
+    <li><img src="../images/main_page_img/f.jpg" width="290" height="200" alt="Firehouse"></li>
 </ul>
       </div>
     

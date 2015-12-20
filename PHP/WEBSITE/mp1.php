@@ -218,7 +218,7 @@ $(document).ready(function() {
                         <div class="nav-bar inline">
                             <div class="container inline">
                                 <div><img class="img-thumbnail img-circle web_logo_img logo" src="images/PUCIT1.png"></div>
-                                <a id="logo" href="home/home.html">PUCIT Portal</a>
+                                <a id="logo" href="home/home.php">PUCIT Portal</a>
                                 
                               <ul class="inline">
                                   <form method="post"> <li> <input type="email" name="email" maxlength = "25" placeholder = "Email ID " size = "25" required autofocus>   </li>
@@ -242,7 +242,7 @@ $(document).ready(function() {
     
 
     
-        <br><br>  <a href = "signup_HTML/signupform.html.html"><button id = "signup"><b>SIGN UP</b></button> </a>
+        <br><br>  <a href = "signup_HTML/"><button id = "signup"><b>SIGN UP</b></button> </a>
 <ul class="img-list">
   <li>
     <a href="#">

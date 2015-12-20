@@ -21,7 +21,14 @@ if( $_SESSION['user'] == null)
 <script src="../jquery/home_jquery/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="../jquery/home_jquery/jquery.easing.min.js"></script>
 <script type="text/javascript" src="../jquery/home_jquery/jquery.easy-ticker.js"></script>
-
+<style>
+    .tickerBtnClass{
+        
+        font-size: 20px;
+    box-shadow: 4px 3px 5px 1px;
+    margin-right: 1%;
+    }
+        </style>
 <script type="text/javascript">
 $(document).ready(function(){
      
@@ -46,11 +53,9 @@ $(document).ready(function(){
                                         var row = response.data[key];
                                         var a = row.postDesc;
                                        var n = row.apostDesc;
-                                     
+                                                                           
                                         
-                                        
-                                       
-                                         $('.display').append(" <li><span id = 'hufeed'> Univeristy Feed: </span> <a href='#'>  "+a.split("\n",1)+" </a> </br> <span style = 'font-color:black'> Posted By:"+row.postedby+" </span> </li>")
+                $('.display').append(" <li><span id = 'hufeed'> Univeristy Feed: </span> <a href='#'>  "+a.split("\n",1)+" </a> </br> <span style = 'font-color:black'> Posted By:"+row.postedby+" </span> </li>")
                                     
                                     }
 				},
@@ -158,7 +163,7 @@ $(document).ready(function(){
                                    
 				},
 				error: function (err, type, httpStatus) {
-					alert('error has occured');
+					alert('error has occured in class annoucements');
 				}
 			};
 			
@@ -228,7 +233,7 @@ $(document).ready(function(){
                                    
 				},
 				error: function (err, type, httpStatus) {
-					alert('error has occured');
+					alert('error has occured university annoucements');
 				}
 			};
 			
@@ -267,12 +272,13 @@ $(document).ready(function(){
 		
 	});
 	
+    
 	$('.visall').click(function(){
 		dd.stop();
 		dd.options['visible'] = 0 ;
 		dd.start();
 	});
-	
+	$("div.unifeed > button").addClass("tickerBtnClass");
  
 });
 </script>

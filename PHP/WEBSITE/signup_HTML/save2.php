@@ -2,8 +2,10 @@
 session_start();
 ?>
 
+
+
 <?php 
-include('connectPDO.php');
+include('connect.php');
 
       $fname = $_POST["fname"];
       $lname = $_POST["lname"];
@@ -20,7 +22,17 @@ include('connectPDO.php');
 			
            if(mysqli_num_rows($query_result) > 0  )
            {
-             echo "You can not more than 1 account with same email";
+               echo "<script src = '../jquery/home_jquery/jquery.min.js' type='text/javascript'></script>";
+                   echo "<script> $(document).ready(Mainfunction);
+            function Mainfunction(){
+            
+                alert('Sorry!! You can not add more than 1 account with the same email');
+                window.location.replace('thanks.php');
+            };
+</script>";
+
+             echo "You can not add more than 1 account with the same Email";
+               
            }
            else
            {
