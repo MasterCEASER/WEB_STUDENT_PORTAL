@@ -21,7 +21,7 @@ $arr = array();
   $arr["first"] = $row["fname"];
    $arr["second"] = $row["lname"];
    $arr["email"] = $row["email"];
-   $arr["pass"] = $row["Password"];
+   $arr["pass"] = $row["password"];
    $arr["intro"] = $row["intro"];
   
   

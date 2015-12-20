@@ -32,7 +32,7 @@ $user = $_SESSION['user'];
  echo "<h1> DATA SAVED </h1>";
 	  
        
-          header('Location:settings.php');
+          header('Location:settings.php?name='.$fname.' '.$lname);
 	  
    
 

@@ -3,8 +3,12 @@
 $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
 ?>
 <script>
-    <?php if(isset($_REQUEST['name'])==true && isset($_REQUEST['img'])==true){
+    <?php if(isset($_REQUEST['name'])==true)
+{
         echo "localStorage['uname'] = '".$_REQUEST['name']."';"; 
+    } 
+    ?>
+    <?php if(isset($_REQUEST['img'])==true){
         echo "localStorage['img'] = '".$_REQUEST['img']."';";
     }
     ?>;
