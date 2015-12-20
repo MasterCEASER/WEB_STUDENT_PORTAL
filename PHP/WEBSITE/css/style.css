@@ -53,9 +53,10 @@ div,p{
         }
         .web_dialog
         {
-            left: 45%;
-            top: 35%;
-            width: 500px;
+    overflow-y: auto;
+            left: 42%;
+            top: 22%;
+            width: 515px;
             height: 300px;
             background-color: White;
             border-color: Black;            
@@ -72,7 +73,7 @@ div,p{
     display: inline-block;
     margin-left: 34px;
     margin-right: 34px;
-    margin-top: 40px;
+    margin-top: 25px;
     min-width: 180px;
     padding-bottom: 10px;
 }

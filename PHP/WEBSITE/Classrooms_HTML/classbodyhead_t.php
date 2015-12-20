@@ -24,7 +24,17 @@
                         margin-right: 0;
                     }
                 </style>
-                <?php include('classTA.php') ?>
+                
+                
+                <?php 
+                $sql = "Select type from person where id = ".$_SESSION['user'];//echo $sql;
+    $res = $db->query($sql);
+    $row = $res->fetch(PDO::FETCH_ASSOC);
+        $t = $row['type'];
+        if($t==1){
+                include('classTA.php'); 
+        }
+                ?>
                 <div id="sub-content">
                     <div id="class-announcements-sidebar" class="sub_child_content" style="border: 0px solid black;">
                         <div id="class-logo-announcements-content">

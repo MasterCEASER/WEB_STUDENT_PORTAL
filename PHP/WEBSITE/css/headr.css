@@ -2,6 +2,7 @@ div{
 }
 body{
     margin: 0;
+        background-color: whitesmoke;
 }
 
 .img-thumbnail {
@@ -163,6 +164,7 @@ body{
     display: list-item;
     border-bottom: 1px solid gainsboro;
     width: 110px;
+        box-shadow: 4px 4px 10px 14px whitesmoke;
 }
 #user-profile  ul li.clearfix > a{
     all: default;
