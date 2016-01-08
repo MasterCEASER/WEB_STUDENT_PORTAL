@@ -11,7 +11,7 @@ session_start();
 	
     if($action == "updateDesc")
 	{
-        $id = $_SESSION['class'];  
+        $id = $_REQUEST['class'];  
         $desc = $_REQUEST["desc"];
         
         $sql = "update classes set description = '$desc' where classId = ".$id.";";
@@ -22,7 +22,7 @@ session_start();
 	}
 	else if($action == "updateOut")
 	{
-        $cid = $_SESSION['class'];  
+        $cid = $_REQUEST['class']; 
         $id = $_SESSION['user'];  
         $out = $_REQUEST["out"];
         
@@ -44,8 +44,7 @@ session_start();
             if(!file_exists($row['userImg'])){
                 $row['userImg'] = "..//image//defaultUser.jpg";
                 
-            }/*
-            echo '<img src='.$row['userImg'].'>';*/
+            }
             $out[$i] = $row;
             $i++;
         }

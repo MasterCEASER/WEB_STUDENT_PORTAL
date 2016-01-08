@@ -2,6 +2,13 @@
         include ('head.php');
         include ('../header.php');
         include ('classbodyhead.php');
+if(isset($_SESSION['p']) == false){
+    header("Location:../classController.php");   
+}
+else if($_SESSION['p'] == 't')
+{
+    header("Location:ClassRooms_Announcements_Teacher_TA.php");
+}
 
         $u = $_SESSION['user'];
 //        $c = $_SESSION['course'];

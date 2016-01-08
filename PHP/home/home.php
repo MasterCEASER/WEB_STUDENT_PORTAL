@@ -5,7 +5,7 @@ session_start();
 if( $_SESSION['user'] == null)
 {
     
-     header('Location: ../mp1.php');
+     header('Location: ../');
 }
 ?>
 <html>
@@ -320,7 +320,7 @@ $(document).ready(function(){
                                                   
                         
                          <div class="imgg">
-                             <img src="../images/home_img/img2.gif" width="100%" height="100%">
+                             <img src="../image/home_img/img2.gif" width="100%" height="100%">
                         </div>     
                           <div class="descr">
                               <center>
@@ -336,7 +336,7 @@ $(document).ready(function(){
                                                   
                         
                          <div class="imgg">
-                             <img src="../images/home_img/img2.gif" width="100%" height="100%">
+                             <img src="../image/home_img/img2.gif" width="100%" height="100%">
                         </div>     
                           <div class="descr">
                               <center>
@@ -352,7 +352,7 @@ $(document).ready(function(){
                                                   
                         
                          <div class="imgg">
-                             <img src="../images/home_img/img2.gif" width="100%" height="100%">
+                             <img src="../image/home_img/img2.gif" width="100%" height="100%">
                         </div>     
                           <div class="descr">
                               <center>

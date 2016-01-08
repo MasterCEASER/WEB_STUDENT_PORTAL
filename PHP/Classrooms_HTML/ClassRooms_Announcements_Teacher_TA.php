@@ -22,7 +22,9 @@
                             <?php
                             if(isset($_REQUEST["Post"]) == true){
                                 $s = $_REQUEST['ns'];
+                                $s = addslashes($s);
                                 $a = $_REQUEST['na'];
+                                $a = addslashes($a);
                                 $c = $_REQUEST['class'];
                                 $sql = "insert into announcemnet(subject,description,classId) values ('$s','$a',$c);";
                                 $res = $db->query($sql);

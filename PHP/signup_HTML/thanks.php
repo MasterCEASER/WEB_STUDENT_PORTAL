@@ -5,7 +5,7 @@ session_start();
 if( $_SESSION['user'] == null)
 {
     
-     header('Location: ../mp1.php');
+     header('Location: ../index.php');
   
 }
   
@@ -124,13 +124,13 @@ if( $_SESSION['user'] == null)
                     <div class="main_menu inline">
                         <div class="nav-bar inline">
                             <div class="container inline">
-                                <div><img class="img-thumbnail img-circle web_logo_img logo" src="../images/PUCIT1.png"></div>
+                                <div><img class="img-thumbnail img-circle web_logo_img logo" src="../image/PUCIT1.png"></div>
                                 <a id="logo" href="../mp1.html">PUCIT Portal</a>
                                 <ul class="inline">
                                    
                                     
                                 </ul>
-                                <div id="usr_img"><img class="user_logo_img" src="../images/PUCIT1.png"></div>
+                                <div id="usr_img"><img class="user_logo_img" src="../image/PUCIT1.png"></div>
                             </div>
                         </div>
                     </div>
@@ -161,12 +161,12 @@ if( $_SESSION['user'] == null)
       <div class = "slide">
         
        <ul id="scroller">
-    <li><img src="../images/main_page_img/a.jpg" width="290" height="200" alt="Firehouse"></li>
-    <li><img src="../images/main_page_img/b.jpg" width="290" height="200" alt="Chloe nightclub"></li>
-    <li><img src="../images/main_page_img/c.jpg" width="290" height="200" alt="Firehouse bar"></li>
-    <li><img src="../images/main_page_img/d.jpg" width="290" height="200" alt="Firehouse chloe club fishtank"></li>
-    <li><img src="../images/main_page_img/e.jpg" width="290" height="200" alt="Firehouse restaurant"></li>
-    <li><img src="../images/main_page_img/f.jpg" width="290" height="200" alt="Firehouse"></li>
+    <li><img src="../image/main_page_img/a.jpg" width="290" height="200" alt="Firehouse"></li>
+    <li><img src="../image/main_page_img/b.jpg" width="290" height="200" alt="Chloe nightclub"></li>
+    <li><img src="../image/main_page_img/c.jpg" width="290" height="200" alt="Firehouse bar"></li>
+    <li><img src="../image/main_page_img/d.jpg" width="290" height="200" alt="Firehouse chloe club fishtank"></li>
+    <li><img src="../image/main_page_img/e.jpg" width="290" height="200" alt="Firehouse restaurant"></li>
+    <li><img src="../image/main_page_img/f.jpg" width="290" height="200" alt="Firehouse"></li>
 </ul>
       </div>
     

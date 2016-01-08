@@ -103,8 +103,10 @@
                                     data : data,
                                     success : function(respone){
                                         console.log(respone.data);
-                                        for(var x in respone.data){
-                                        }
+                                        var d = $("#add_ta").closest("div");
+                                        var id = parseInt(d.attr("id"));
+                                        id = id  + 1;
+                                        d.attr("id",id);
                                     },
                                     error : function(err, type, httpStatus){
                                         console.log(err +  "--" + type + "--"  + httpStatus);  
@@ -215,6 +217,7 @@
                                                     data : rdata,
                                                     success : function(respone){
                                                         console.log(respone);
+                                                    
                                                     },
                                                     error : function(err, type, httpStatus){
                                                         console.log(err +  "--" + type + "--"  + httpStatus);  
@@ -279,7 +282,7 @@
                         $("#remove_st").click(function(){
                             var c = $(this).closest("div").attr("id");
                             if(c == 0){
-                                alert("No TA in class.");
+                                alert("No Student in class.");
                             }else{
                                 var m = $("#ta_dia");
                                 var data = {
@@ -310,7 +313,7 @@
                                             console.log(respone.data);
                                             m.append(div);
                                             remove.click(function(){
-                                                var mainDiv = $("#remove_ta").closest("div");
+                                                var mainDiv = $("#remove_st").closest("div");
                                                 var v = mainDiv.attr("id");
                                                 mainDiv.removeClass(v);
                                                 v = parseInt(v) - 1;
@@ -356,7 +359,7 @@
                         $("#add_st").click(function(){
                             var c = $(this).closest("div").attr("id");
                             if(c >= 60){
-                                alert("You cant add more TA..");
+                                alert("You cant add more Student..");
                             }else{
                                 var m = $("#ta_dia");
                                 var add = $("<input class='btnClass' type='button' value='Add'>");
@@ -416,8 +419,10 @@
                                     data : data,
                                     success : function(respone){
                                         console.log(respone.data);
-                                        for(var x in respone.data){
-                                        }
+                                        var d = $("#remove_st").closest("div");
+                                        var id = parseInt(d.attr("id"));
+                                        id = id  + 1;
+                                        d.attr("id",id);
                                     },
                                     error : function(err, type, httpStatus){
                                         console.log(err +  "--" + type + "--"  + httpStatus);  

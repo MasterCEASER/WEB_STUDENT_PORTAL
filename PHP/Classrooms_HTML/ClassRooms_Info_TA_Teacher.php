@@ -60,7 +60,8 @@
                 var t = tta.val().trim();
                 var data = {
                     "action" : "updateDesc",
-                    "desc" : t
+                    "desc" : t,
+                    "class" : <?php echo $_REQUEST["class"] ?>
                 }
                 var settings = {
                     type : "POST",
@@ -125,7 +126,8 @@
                         
                         var data = {
                             "action" : "updateOut",
-                            "out" : t
+                            "out" : t,
+                    "class" : <?php echo $_REQUEST["class"] ?>
                         }
                         var settings = {
                             type : "POST",

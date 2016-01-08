@@ -19,9 +19,12 @@
                             <?php
                             if(isset($_REQUEST["Post"]) == true){
                                 $d = $_REQUEST['pt'];
+                                $d = addslashes($d);
                                 $class = $_REQUEST['class'];
                                 $u = $_SESSION['user'];
+                                
                                 $sql = "insert into post(postedBy,postDesc,classId) values ($u,'$d',$class);";
+                                
                                 $res = $db->query($sql);
                             }
                             ?>
@@ -37,14 +40,21 @@
                         </div>
                         <div id="old_posts" class="post_wrapper">
                             <?php
-        $sql = 'select fname,lname,postDesc,postTime from post,person where person.id=postedBy and classId = '.$_REQUEST['class'].' order by postTime desc;';
+        $sql = 'select fname,lname,postDesc,postTime,userImg image from post,person where person.id=postedBy and classId = '.$_REQUEST['class'].' order by postTime desc;';
         $res = $db->query($sql);
         while($row = $res->fetch(PDO::FETCH_ASSOC))
         {
+                    $img = $row["image"];
+                    $img = '../'.$img;
+                    if((empty($img) == true) || (file_exists($img) == false))
+                    {
+                        $img = '../image/defaultUser.jpg';
+                    }
+                    
                         echo    '<div class="post">
                                 <div class="post_header">
                                     <div class="post_img_div">
-                                        <img class="img-thumbnail img-circle" src="../Images/PUCIT1.png" style="">
+                                        <img class="img-thumbnail img-circle" src="'.$img.'" style="">
                                     </div>
                                     <div class="posted_by">'.$row['fname'] .' '. $row['lname'] .'</div>
                                     <div id="date-time">

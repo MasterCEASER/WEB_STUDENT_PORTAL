@@ -11,6 +11,7 @@ include('connect.php');
       $lname = $_POST["lname"];
       $pass = $_POST["pass"];
     $intro = $_POST["intro"];
+    $intro = addslashes($intro);
       $email = $_POST["email"];
       $identity = $_POST["criteria"];
       $birthday = $_POST["birthday"];
@@ -45,6 +46,9 @@ include('connect.php');
                 $identity = 1;
               }
                 
+               
+           $new_name = "";    
+               if($_FILES["fileToUpload"]["name"] != ""){
                 //Here 'userpic' is name of your 'file control'
 	//explore will break the name by using '.' delimeter.
 	$temp = explode(".", $_FILES["fileToUpload"]["name"]);
@@ -57,6 +61,8 @@ include('connect.php');
 
 	//store image name in database
                $new_name = 'image/'.$new_name;
+               
+               };
             $sql = "INSERT INTO person (lname,fname,email,Password,birthdate,type,userimg,intro,sex)
 			VALUES ('$lname','$fname', '$email', '$pass','$birthday','$identity','$new_name','$intro','$sex')";
 		
@@ -82,6 +88,7 @@ include('connect.php');
             $_SESSION['email'] = $email;
             $_SESSION['type'] = $_POST['criteria'];
           echo "email is ".$_SESSION['email'];  
+            
           header('Location: thanks.php?name='.$name.'&img='.$new_name);
 			echo"query saved";
 		} else {

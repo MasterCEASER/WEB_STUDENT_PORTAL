@@ -1,6 +1,13 @@
 <?php
     include('../connect/prac.php');
     session_start();
+if(isset($_SESSION['p']) == false){
+    header("Location:../classController.php");   
+}
+else if($_SESSION['p'] == 's')
+{
+    header("Location:Student.php");
+}
 ?>
 <html>
 <head>    
@@ -60,22 +67,17 @@
         $outline=$_REQUEST["course"];
         $img=$_FILES["img"];
         $file_n = $img["name"];
-        if(empty($name1) || empty($des)|| empty($outline) || empty($img) )
-        {
-                echo "Fill complete form";
-        }
-        else
-        {
+        
             if(empty($file_n) == false){
                 $file_n= round(microtime(true));
                 move_uploaded_file($_FILES["img"]["tmp_name"], "..//image//".$file_n);
             }
-            $sqla="insert into classes(teacherId,courseId,description,courseOutline,image) values($b,$name1,'$des','$outline','image/$file_n')";
+            $sqla="insert into classes(teacherId,courseId,description,courseOutline,image) values($b,$name1,'$des','$outline','$file_n')";
             $result = mysqli_query($conn,$sqla);
             $sqla="insert into teacher(teacherId,classId) values($b,(Select classId from classes where teacherId = $b and courseId = $name1))";
             $result = mysqli_query($conn,$sqla);
             
-        }
+        
     }
     ?>
      <?php
@@ -120,7 +122,10 @@
                             {
                                 while($row=mysqli_fetch_assoc($result))
                                 {
-                            $row['image'] = '../'.$row['image'];
+                                    if(empty($row['image']) == true){
+                                        $row['image'] = 'default.jpg';
+                                    }
+                                    $row['image'] = '../image/'.$row['image'];
                                     if((empty($row['image']) == true) || (file_exists($row['image']) == false))
                                     {
                                         $row['image'] = '../image/default.jpg';

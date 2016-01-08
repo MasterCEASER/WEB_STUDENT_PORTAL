@@ -10,5 +10,5 @@
 <?php 
 session_start();
 session_unset();
-header("Location:mp1.php");
+header("Location:index.php");
 ?>

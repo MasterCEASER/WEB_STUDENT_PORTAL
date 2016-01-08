@@ -250,7 +250,7 @@ $(document).ready(function() {
                     <div class="main_menu inline">
                         <div class="nav-bar inline">
                             <div class="container inline">
-                                <div><img class="img-thumbnail img-circle web_logo_img logo" src="images/PUCIT1.png"></div>
+                                <div><img class="img-thumbnail img-circle web_logo_img logo" src="image/PUCIT1.png"></div>
                                 <a id="logo" href="home/home.php">PUCIT PORTAL</a>
                                 
                               <ul class="inline">
@@ -265,7 +265,7 @@ $(document).ready(function() {
                                      
                                   </form></ul> 
                                    
-                                <div id="usr_img"><img class="user_logo_img" src="images/PUCIT1.png"></div>
+                                <div id="usr_img"><img class="user_logo_img" src="image/PUCIT1.png"></div>
                             </div>
                         </div>
                     </div>
@@ -280,37 +280,37 @@ $(document).ready(function() {
    <ul class="img-list">
   <li>
     <a href="#">
-      <img src="images/main_page_img/a.jpg" id="a" border="4px" width="200" height="100">
+      <img src="image/main_page_img/a.jpg" id="a" border="4px" width="200" height="100">
       <center><span class="text-content"><span>PUCIT-Allama Iqbal-Old Campus VC lawn</span></span></center>
     </a>
   </li>
  <li>
     <a href="#">
-      <img src="images/main_page_img/b.jpg" id="b" border="4px" width="200" height="100">
+      <img src="image/main_page_img/b.jpg" id="b" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT-Allama Iqbal Old Campus-Front view</span></span>
     </a>
   </li>
  <li>
     <a href="#">
-      <img src="images/main_page_img/c.jpg" id="c" border="4px" width="200" height="100">
+      <img src="image/main_page_img/c.jpg" id="c" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT-Quaid e Azam New Campus-Front view</span></span>
     </a>
   </li>
      <li>
     <a href="#">
-      <img src="images/main_page_img/d.jpg" id="d" border="4px" width="200" height="100" style="margin-top: 8px;">
+      <img src="image/main_page_img/d.jpg" id="d" border="4px" width="200" height="100" style="margin-top: 8px;">
       <span class="text-content"><span>PUCIT-Allama Iqbal Old Campus-Computer Lab</span></span>
     </a>
   </li>
  <li>
     <a href="#">
-      <img src="images/main_page_img/e.jpg" id="e" border="4px" width="200" height="100">
+      <img src="image/main_page_img/e.jpg" id="e" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT-Allama Iqbal Old Campus-Library</span></span>
     </a>
   </li>
      <li>
     <a href="#">
-      <img src="images/main_page_img/f.jpg" id="f" border="4px" width="200" height="100">
+      <img src="image/main_page_img/f.jpg" id="f" border="4px" width="200" height="100">
       <span class="text-content"><span>PUCIT- Quaid e Azam New Campus-Computer lab</span></span>
     </a>
   </li>
@@ -325,12 +325,12 @@ $(document).ready(function() {
             }
         </style>
         <ul id="scroller">
-    <li><img src="images/main_page_img/a.jpg" alt="Firehouse"></li>
-    <li><img src="images/main_page_img/b.jpg" alt="Chloe nightclub"></li>
-    <li><img src="images/main_page_img/c.jpg" alt="Firehouse bar"></li>
-    <li><img src="images/main_page_img/d.jpg" alt="Firehouse chloe club fishtank"></li>
-    <li><img src="images/main_page_img/e.jpg" alt="Firehouse restaurant"></li>
-    <li><img src="images/main_page_img/f.jpg" alt="Firehouse"></li>
+    <li><img src="image/main_page_img/a.jpg" alt="Firehouse"></li>
+    <li><img src="image/main_page_img/b.jpg" alt="Chloe nightclub"></li>
+    <li><img src="image/main_page_img/c.jpg" alt="Firehouse bar"></li>
+    <li><img src="image/main_page_img/d.jpg" alt="Firehouse chloe club fishtank"></li>
+    <li><img src="image/main_page_img/e.jpg" alt="Firehouse restaurant"></li>
+    <li><img src="image/main_page_img/f.jpg" alt="Firehouse"></li>
 </ul>
 
          <div id ="footer">
@@ -344,14 +344,14 @@ $(document).ready(function() {
           
             <div class ="search">
                 
-                <form method ="post" action="mp1.php"> 
+                <form method ="post" action=""> 
                     <table cellpadding="0px" cellspacing="0px"> 
                         <tr> 
                             <td style="border-style:solid none solid solid;border-color:#4B7B9F;border-width:1px;">
                                 <input type="text" placeholder="Search here" style="width:300px; border:0px solid; height:17px;padding:0px 3px; position:relative;"> 
                             </td>
                             <td style="border-style:solid;border- color:#4B7B9F;border-width:1px;"> 
-                                        <input type="submit" value="" style="border-style: none; background:url('images/main_page_img/searchbutton3.gif') no-repeat; width: 25px;height: 20px;">
+                                        <input type="submit" value="" style="border-style: none; background:url('image/main_page_img/searchbutton3.gif') no-repeat; width: 25px;height: 20px;">
                             </td>
                         </tr>
                     </table>

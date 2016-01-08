@@ -9,7 +9,7 @@
                 <div id="sub-content">                    
                 <div id="class-announcements-sidebar" class="sub_child_content" style="">
                 <div id="class-logo-announcements-content">
-                    <img class="img-thumbnail "  src="../images/PUCIT1.png" alt="Image Not Found...." >
+                    <img class="img-thumbnail "  src="../image/PUCIT1.png" alt="Image Not Found...." >
                 </div>
                 <hr/>
                 <div id="class-info-announcements-content" >
@@ -35,12 +35,14 @@
                             <h4>New Posts</h4><hr>
                             <?php
                             if(isset($_REQUEST["Post"]) == true){
+                                $u = $_SESSION['user'];
                                 $d = $_REQUEST['pt'];
+                                $d = addslashes($d);
                                 $sql = "insert into post(postedBy,postDesc,global) values ($u,'$d',1);";
                                 $res = $db->query($sql);
                             }
                             ?>
-                            <form>
+                            <form method="post">
                                 <textarea  id="new_post_text" name="pt" class="new_text"  placeholder="Write ............"></textarea>
                                 <hr>
                                 <div class="" id="btn_div" >
@@ -51,14 +53,19 @@
                         </div>
                         <div id="old_posts" class="post_wrapper">
                             <?php
-        $sql = 'select concat(fname," ",lname) as name,postDesc,postTime from post,person where postedBy=person.id  and global = 1 order by postTime desc;';
+        $sql = 'select concat(fname," ",lname) as name,postDesc,postTime,userImg image from post,person where postedBy=person.id  and global = 1 order by postTime desc;';
         $res = $db->query($sql);
         while($row = $res->fetch(PDO::FETCH_ASSOC))
-        {
+        {$img = $row["image"];
+                    if($img == "" || (file_exists("../".$img) == false))
+                    {
+                        $img = 'image/defaultUser.jpg';
+                    }
+                    $img = '../'.$img;
                         echo    '<div class="post">
                                 <div class="post_header">
                                     <div class="post_img_div">
-                                        <img class="img-thumbnail img-circle" src="../Images/PUCIT1.png" style="">
+                                        <img class="img-thumbnail img-circle" src="'.$img.'" style="">
                                     </div>
                                     <div class="posted_by">'.$row['name'].'</div>
                                     <div id="date-time">

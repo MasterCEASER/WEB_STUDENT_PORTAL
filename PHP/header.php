@@ -20,11 +20,11 @@ $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
                         <div class="nav-bar ">
                             <div class="container ">
                                 <div><img class="img-thumbnail img-circle web_logo_img logo" alt="Image Ot.Found.." src=<?php echo '"'.$host.'image/PUCIT1.png"' ?>></div>
-                                <a id="logo" href=<?php echo '"'.$host.'mp1.php"' ?>>pucit portal</a>
+                                <a id="logo" href=<?php echo '"'.$host.'"' ?>>PUCIT PORTAL</a>
                                 <ul>
                                     <div style="display:table">
                                         <li style="border-left:0px">
-                                            <a href=<?php echo '"'.$host.'home/home.php"' ?> class="active">
+                                            <a href=<?php echo '"'.$host.'home/"' ?> class="active">
                                                 <i class="fa fa-home"></i>
                                                 Home
                                             </a>
@@ -77,6 +77,7 @@ $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
                                                 
                                             var ui = $("#user-profile-img");
                                                 ui.attr("src",<?php echo '"'.$host.'"' ?> + img);
+                                                console.log(localStorage);
                                             }
                                             $("#user-profile-img");
                                             $("#user-profile > ul > li:nth-child(1) a").append(" "+ localStorage['uname']);
@@ -112,4 +113,7 @@ $host = substr($host,0,strpos($host,'/PHP/')).'/PHP/';
                 </div>
             </div>
         </div>
-        
+    <?php
+
+//    echo "<pre>",print_r($_SESSION),"</pre>";    
+?>

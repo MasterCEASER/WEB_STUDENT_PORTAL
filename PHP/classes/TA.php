@@ -1,6 +1,14 @@
 <?php
     include('../connect/prac.php');
     session_start();
+
+if(isset($_SESSION['p']) == false){
+    header("Location:../classController.php");   
+}
+else if($_SESSION['p'] == 't')
+{
+    header("Location:Teacher.php");
+}   
 ?>       
 <html>
 <head>    
@@ -39,7 +47,10 @@
                         while($row=mysqli_fetch_assoc($result))
                         {
                             
-                            $row['image'] = '../'.$row['image'];
+                            if(empty($row['image']) == true){
+                                $row['image'] = 'default.jpg';
+                            }
+                            $row['image'] = '../image/'.$row['image'];
                             if((empty($row['image']) == true) || (file_exists($row['image']) == false))
                             {
                                 $row['image'] = '../image/default.jpg';
@@ -51,6 +62,7 @@
                                         <div style="display:table-cell;vertical-align:middle;padding-left: 60px;">  
                                             <a href="../classroomController.php?type=1&class='.$row['classId'].'">
                                                 <h2 style="text-align: center;">'.$row['courseName'].'</h2>                                
+                                            </a>                                   
                                             </a>
                                             <ul>
                                                 <li>Course-Code : '.$row['courseId'].'</li>
@@ -64,6 +76,8 @@
                     }
                     ?>
                     <hr><div id="newclass-Content2"></div>
+                    <script>
+                    </script>
                 </div>
             </div>
         </div>

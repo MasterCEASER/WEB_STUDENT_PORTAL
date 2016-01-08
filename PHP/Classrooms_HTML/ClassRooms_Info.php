@@ -2,6 +2,14 @@
     include ('head.php');
     include ('../header.php');
     include ('classbodyhead.php');
+
+if(isset($_SESSION['p']) == false || isset($_REQUEST['class']) == false){
+    header("Location:../classController.php");   
+}
+else if($_SESSION['p'] == 't')
+{
+    header("Location:ClassRooms_Info_Teacher_TA.php");
+}
 ?>
 
 <style>
@@ -29,7 +37,6 @@
         <h3>Description</h3><textarea>
 <?php
         $u = $_SESSION['user'];
-        $c = $_SESSION['course'];
         $sql = 'select description,courseOutline from classes where classId = '.$_REQUEST['class'].';';
         $res = $db->query($sql);
         $row = $res->fetch(PDO::FETCH_NUM);

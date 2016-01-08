@@ -8,7 +8,12 @@
         $res = $db->query($sql);
         $row = $res->fetch(PDO::FETCH_ASSOC);
             echo $row['courseName'];
-                    $img = '../'.$row['image'];
+                    
+                    $img = $row['image'];
+                    if(empty($img) == true){
+                        $img = 'default.jpg';
+                    }
+                    $img = '../image/'.$img;
                     if((empty($img) == true) || (file_exists($img) == false))
                     {
                         $img = '../image/default.jpg';

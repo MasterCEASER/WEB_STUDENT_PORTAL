@@ -2,6 +2,9 @@
 include('../connect/connectPDO.php');
 session_start();
 $u = $_SESSION['user'];
+if(isset($_REQUEST['class']) == false){
+    header("Location:../classroomController.php");
+}
 ?>
 <html>
     <head>        

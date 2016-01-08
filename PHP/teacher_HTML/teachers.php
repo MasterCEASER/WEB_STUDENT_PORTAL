@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
     <head>
         <link href ="../css/teacher-info_css/teachers-info.css" rel="stylesheet" type="text/css" />
@@ -18,296 +21,127 @@
 				dataType: "json",
 				url: "teacher-info.php",
 				data: data,
-				success: function(response) {
+				success: function(response){
 					console.log('Recieved from server:');
 					console.log('Recieved from server:');
-                   
-                    var len = response.data.length;
-                    var pages = Math.ceil(len/4);
-                    var k = 0;
-                    var back = 0;
-                   
-                    if (pages > 1)
-                    {
-                        $("#show-pagination").append("<input type = 'button' value = 'Next' id = 'Next'><input type = 'button' value = 'Back' id = 'Back' >")
+                    
+                    console.log(response.data);
+                    var arr = response.data;
+                    var s = 4;
+                    var l = Math.ceil(arr.length/s);
+                    var j=0;
+                    var arr2 = [];
+                    for(var i=0; i<l; i++){
+                        arr2[j] =  arr.splice(0,s);
+                        j++;
                     }
-                    var inc = 1;
-                    var checker = 0;
-                    var base = '../signup_HTML/img/';
-                    while(k < len && inc <= 4 )
-                    {
-                        var row = response.data[k];
-                        
-                        if( inc == 1)
-                        {
-                            //alert("1");
-                            $("#hshow1 h2").html(""+row.name+"");
-                            $("#show1").html(""+row.intro+"");
-                             //alert("1");
-                            $.get(base+row.img).done(function(){
- $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-                                
-                                
-            
-                              
-  $(".ishow1").attr("src","../images/defaultUser.jpg");   
-});
-                             
-                        }
-                        else
-                            if(inc == 2)
-                            {
-                                //alert("2");
-                                $("#hshow2 h2").html(""+row.name+"");
-                                $("#show2").html(""+row.intro+"");
-                                 //alert(row.img);
-                                 $.get(base+row.img).done(function(){
- $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow2").attr("src","../images/defaultUser.jpg");   
-}); 
-
+                    var dum = $("<div>");
+                    dum.attr("id","dum");
+                    var ind = $("<ul class='pagination'>");
+                    ind.attr("id","index");
+                    var i=1;
+                    for(var z in arr2){
+                        var x = $("<div>");
+                        x.attr("id",i);
+                        var xx = arr2[z];
+                        for(var zz in xx){
+                            var dd = $("#hshow").css("display","").clone();
+                            console.log(xx[zz]);
+                            dd.find("h2").text(xx[zz]['name']);
+                            dd.find("#show1").text(xx[zz]['intro']);
+                            var img = xx[zz]['img'];
+                            if(img == undefined || img == null || img == "" || img == " " ){
+                                img = "image/defaultUser.jpg";
                             }
-                            else
-                                if(inc == 3)
-                                {
-                                    //alert("3");
-                                    $("#hshow3 h2").html(""+row.name+"");
-                                    $("#show3").html(""+row.intro+"");
-                                   $.get(base+row.img).done(function(){
- $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-                                
-                                
-            
-                              
-  $(".ishow3").attr("src","../images/defaultUser.jpg");   
-});
-                             
-
-                                }
-                                else
-                                    if(inc == 4)
-                                    {
-                                        //alert("4");
-                                        $("#hshow4 h2").html(""+row.name+"");
-                                        $("#show4").html(""+row.intro+"");
-                                       $.get(base+row.img).done(function(){
- $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow4").attr("src","../images/defaultUser.jpg");   
-}); 
-    
-                                    }
-                                k++;
-                                inc++;
+                            var zimg =  "../"+img;
+                            console.log(zimg);
+                            dd.find("img").attr('src',zimg);
+                            xx[zz] = dd;
+                        }
+//                        console.log(arr2[z]);
+                        x.append(arr2[z])
+                        dum.append(x);
+                        var a = $("<a class='page_a'>");
+                        a.text(i);
+                        var li = $("<li>");
+                        li.append(a);
+                        ind.append(li);
+                        i++;
+                        x.hide();
                     }
-                    
-                    if(inc < 1 )
-                    {
-                       $("#showf div:gt(0)").hide();
-                        
-                    }
-                    else 
-                    if(inc < 2)    
-                    {
-                        $("#slider img:gt(1)").hide();
-                    }
-                    else
-                    if(inc < 3)
-                    {
-                        $("#slider img:gt(2)").hide();
-                    }
-                    else 
-                    if(inc < 4)
-                    {
-                        $("#slider img:gt(3)").hide();
-                    }
-                    
-                    inc = 1;
-                    
-                    $("#Next").click(function(){
-                        if(k < len)
-                        {
+                    dum.insertAfter($("div#showf"));
+                    $("<hr id='hrid' style='margin-top:10px'>").insertAfter(dum);
+                    ind.insertAfter($("hr#hrid"));
+                    ind.css("display","none");
+                    $("div#showf").remove();
+                    $("div#dum #1").show();
+                    $("ul.pagination > li:nth-child(1)").addClass("active");
+                $("a.page_a").each(function(){
+                   $(this).click(function(){
+                       var x = $(this).text();
+                       if(x == 1){
+                        $("#prev_btn").attr("disabled","true").addClass("disabled");
+                       }else{
                            
-                            checker++;
-                             var inc = 1;
-                            back = k;
-                            if (checker == 2)
-                           {
-                               
-                               //alert(back);
-                               checker = 1;
-                           }
-                    while(k < len && inc <= 4 )
-                    {
-                        var row = response.data[k];
-                        if( inc == 1)
-                        {
-                            $("#hshow1 h2").html(""+row.name+"");
-                            $("#show1").html(""+row.intro+"");
-                             $.get(base+row.img).done(function(){
- $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow1").attr("src","../images/defaultUser.jpg");   
-}); 
-                        }
-                        else
-                            if(inc == 2)
-                            {
-                                $("#hshow2 h2").html(""+row.name+"");
-                                $("#show2").html(""+row.intro+"");
-                               $.get(base+row.img).done(function(){
- $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow2").attr("src","../images/defaultUser.jpg");   
-}); 
-
-                            }
-                            else
-                                if(inc == 3)
-                                {
-                                    $("#hshow3 h2").html(""+row.name+"");
-                                    $("#show3").html(""+row.intro+"");
-                                  $.get(base+row.img).done(function(){
- $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow3").attr("src","../images/defaultUser.jpg");   
-}); 
-                                }
-                                else
-                                    if(inc == 4)
-                                    {
-                                        $("#hshow4 h2").html(""+row.name+"");
-                                        $("#show4").html(""+row.intro+"");
-                                     $.get(base+row.img).done(function(){
- $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow4").attr("src","../images/defaultUser.jpg");   
-}); 
-    
-                                    }
-                                k++;
-                                inc++;
-                    }// end of while loop
-                            
-                    if(inc < 1 )
-                    {
-                       $("#showf div:gt(0)").hide();
-                        
-                    }
-                    else 
-                    if(inc < 2)    
-                    {
-                        $("#slider img:gt(1)").hide();
-                    }
-                    else
-                    if(inc < 3)
-                    {
-                        $("#slider img:gt(2)").hide();
-                    }
-                    else 
-                    if(inc < 4)
-                    {
-                        $("#slider img:gt(3)").hide();
-                    }
-    
-                }// end of IF
+                        $("#prev_btn").removeAttr("disabled").removeClass("disabled");
+                       }
+                       if(x == Number($("ul.pagination > li").length)){
                            
-                        }); // end of NEXT
-                
-                        $("#Back").click(function(){
-                        if(k != 0)
-                        {
-                            k = back-4;
-                            var inc = 1;
-                    while(k < len && inc <= 4 )
-                    {
-                        var row = response.data[k];
-                        if( inc == 1)
-                        {
-                            $("#hshow1 h2").html(""+row.name+"");
-                            $("#show1").html(""+row.intro+"");
-                            $.get(base+row.img).done(function(){
- $(".ishow1").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow1").attr("src","../images/defaultUser.jpg");   
-}); 
-                        }
-                        else
-                            if(inc == 2)
-                            {
-                                $("#hshow2 h2").html(""+row.name+"");
-                                $("#show2").html(""+row.intro+"");
-                               
-                               $.get(base+row.img).done(function(){
- $(".ishow2").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow2").attr("src","../images/defaultUser.jpg");   
-}); 
-
-                            }
-                            else
-                                if(inc == 3)
-                                {
-                                    $("#hshow3 h2").html(""+row.name+"");
-                                    $("#show3").html(""+row.intro+"");
-                                   $.get(base+row.img).done(function(){
- $(".ishow3").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow3").attr("src","../images/defaultUser.jpg");   
-}); 
-
-                                }
-                                else
-                                    if(inc == 4)
-                                    {
-                                        $("#hshow4 h2").html(""+row.name+"");
-                                        $("#show4").html(""+row.intro+"");
-                                      $.get(base+row.img).done(function(){
- $(".ishow4").attr("src","../signup_HTML/img/"+row.img+"");   
-}).fail(function(){
-  $(".ishow4").attr("src","../images/defaultUser.jpg");   
-}); 
-                                    }
-                                k++;
-                                inc++;
-                        if (back != 0)
-                            back--;
-                    } // end of while loop 
-                }// end of IF 
-                            
-                    if(inc < 1 )
-                    {
-                       $("#showf div:gt(0)").hide();
+                        $("#next_btn").attr("disabled","true").addClass("disabled");
+                       }else{
+                        $("#next_btn").removeAttr("disabled").removeClass("disabled");
+                           
+                       }
+                    $("ul.pagination > li").removeClass("active");
+                    $("ul.pagination > li:nth-child("+x+")").addClass("active");
+                    $("div#dum > *").hide();
+                    var ss = "div#dum #" + x;      
+                    $(ss).show();
+                   })
+                        }); 
+                    
+                ///////////////////////////////////////////
+                $("#prev_btn").click(function(){
+                var i = Number($("ul.pagination > li.active > a").text());
+                if(i > 1){
+                    i--;
+                    $("ul.pagination > li.active").removeClass('active');
+                    $("ul.pagination > li:nth-child("+i+")").addClass('active');
+                    $("div#dum > *").hide();
+                    var ss = "div#dum #" + i;      
+                    $(ss).show();
+                    if(i == 1){
+                        $("#prev_btn").attr("disabled","true").addClass("disabled");
+                    }else{
                         
+                        $("#next_btn").removeAttr("disabled").removeClass("disabled");
                     }
-                    else 
-                    if(inc < 2)    
-                    {
-                        $("#slider img:gt(1)").hide();
+                }
+            });
+            $("#next_btn").click(function(){
+                var i = Number($("ul.pagination > li.active > a").text());
+                var x = Number($("ul.pagination > li").length);
+                if(i < x){
+                    i++;
+                    $("ul.pagination > li.active").removeClass('active');
+                    $("ul.pagination > li:nth-child("+i+")").addClass('active');
+                    $("div#dum > *").hide();
+                    var ss = "div#dum #" + i;      
+                    $(ss).show();
+                    if(i == x){
+                        $("#next_btn").attr("disabled","true").addClass("disabled");
+                    }else{
+                        
+                        $("#prev_btn").removeAttr("disabled").removeClass("disabled");
                     }
-                    else
-                    if(inc < 3)
-                    {
-                        $("#slider img:gt(2)").hide();
-                    }
-                    else 
-                    if(inc < 4)
-                    {
-                        $("#slider img:gt(3)").hide();
-                    }
-    
-                                     
-                        }); // end of Back
+                }
+            });
                     
-                   
                     
-                             
-                                    
-                                        
-				},
+                    
+                    
+               
+                },
 				error: function (err, type, httpStatus) {
 					//alert('error has occured');
 				}
@@ -323,15 +157,25 @@
         
     </style>
     <body>       
+        <style>
+            .tex{
+                display:table;padding:2px;width:60%;margin-top:20px;box-shadow: 2px 2px 2px 2px gainsboro;
+            }
+            input[type=button]{
         
+        font-size: 20px;
+    box-shadow: 4px 3px 5px 1px;
+    margin-right: 1%;
+    }
+        </style>
         <?php include('../header.php'); ?>
         <hr style="margin-top:20px;"> 
         <div id = "showf" style="padding-left:10px;">
-            <div id = "hshow1"style="display:table;padding:2px;width:60%;margin-top:20px;box-shadow: 2px 2px 2px 2px gainsboro;">
-                <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
+            <div id = "hshow" class="tex">
+                <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;">  </h2>
                 <div style="margin-left: 15px;">
                     <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow1 imgShow" width="110" height="150" src="../images/defaultUser.jpg">
+                            <img class = "ishow1 imgShow" width="110" height="150" src="../image/defaultUser.jpg">
                     </div>
                     
                     <div  style="display:table-cell;vertical-align: top;">
@@ -340,44 +184,12 @@
                     </div>
                     
                 </div>               
-            </div>
-            <div id = "hshow2"style="display:table;padding:2px;width:60%;margin-top:20px;box-shadow: 2px 2px 2px 2px gainsboro;">
-                <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
-                <div style="margin-left: 15px;">
-                    <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow2 imgShow"  width="110" height="150" src="../images/defaultUser.jpg">
-                    </div>
-                    <div  style="display:table-cell;vertical-align: top;">
-                        <h3>INTRODUCTION: </h3>
-                        <span id = "show2"> </span>
-                    </div>
-                </div>               
-            </div>
-            <div id = "hshow3"style="display:table;padding:2px;width:60%;margin-top:20px;box-shadow: 2px 2px 2px 2px gainsboro;">
-                <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
-                <div style="margin-left: 15px;">
-                    <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow3 imgShow" width="110" height="150" src="../images/defaultUser.jpg">
-                    </div>
-                    <div  style="display:table-cell;vertical-align: top;">
-                        <h3>INTRODUCTION: </h3>
-                       <span id = "show3"> </span>
-                    </div>
-                </div>               
-            </div>
-            <div id = "hshow4"style="display:table;padding:2px;width:60%;margin-top:20px;box-shadow: 2px 2px 2px 2px gainsboro;">
-                <h2 style="text-shadow: 2px 2px 5px gray;text-align: center;"> SHUJA UR REHMAN </h2>
-                <div style="margin-left: 15px;">
-                    <div style="display:table-cell;vertical-align:middle;padding-right: 15px;">
-                            <img class = "ishow4 imgShow" width="110" height="150" src="../images/defaultUser.jpg">
-                    </div>
-                    <div  style="display:table-cell;vertical-align: top;">
-                        <h3>INTRODUCTION: </h3>
-                        <span id = "show4"> </span>
-                    </div>
-                </div>               
-            </div>
-        </div>   
+            </div>      
+        </div>
+        <center>
+            <input type="button" id="prev_btn" value="PREV" disabled>
+            <input type="button" id="next_btn" value="NEXT" >
+        </center>
           <style>
               .imgShow{
                   width: 120px;
@@ -385,9 +197,5 @@
     margin-bottom: 20px;
               }
         </style>  
-        <hr style="margin-top:20px;">
-        
-        <div id = "show-pagination">
-        </div>    
     </body>
 </html>  

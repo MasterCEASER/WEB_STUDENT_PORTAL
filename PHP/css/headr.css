@@ -93,6 +93,13 @@ body{
     font-weight: normal;
     font-family: 'Open Sans', sans-serif;
     
+    cursor: pointer;
+    
+}
+#Header #container .main_menu .container > ul li a:hover,
+#user-profile ul li.clearfix > a:hover{
+    zoom:130%;
+    font-weight: bolder;
 }
 #Header #container .main_menu .user_logo_img{
     max-width: 35px;

@@ -1,6 +1,9 @@
 <?php
 include('../connect/connectPDO.php');
 session_start();
+if(isset($_REQUEST['class']) == false){
+    header("Location:../classroomController.php");
+}
 ?>   
 <html>
     <head>        
